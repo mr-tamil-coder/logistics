@@ -1,8 +1,12 @@
 import React from "react";
+import Logo from "./Logo.jsx";
 
 function Signup() {
   return (
+    <>
+    <Logo/>
     <div className="bg-gray-400 min-h-screen flex items-center justify-center">
+     
       <form className="bg-white p-6 rounded-lg shadow-lg">
         <input
           type="text"
@@ -30,6 +34,7 @@ function Signup() {
         </button>
       </form>
     </div>
+    </>
   );
 }
 
