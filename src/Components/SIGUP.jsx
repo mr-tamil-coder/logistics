@@ -4,7 +4,7 @@ function SIGUP(){
 
 
     return(
-        <div>
+        <div  className='bg-gray-400'>
             <form>
                 <input type="text" className="input-box" placeholder="Username"></input><br></br>
                 <input type="password" className="input-box" placeholder="Password"></input><br></br>
