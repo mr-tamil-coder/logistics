@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-          <p>santhosh</p>
+          <p>vinth</p>
      
     </>
   )
