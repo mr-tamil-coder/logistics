@@ -2,7 +2,7 @@ import React from "react";
 import "./login.css";
 const Login = () => {
   return (
-    <div className="bg-gray-400   flex items-center justify-center">
+    <div className="bg-gray-400 min-h-screen flex items-center justify-center">
 
       <div className="bg-red-300">
         <form action="" className="bg-white p-6"> 
