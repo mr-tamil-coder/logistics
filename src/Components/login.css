@@ -1,10 +1,8 @@
-
-.input-box{
-    padding: 5px;
-    margin: 6px;
+.select-role {
+  border: none;
+  /* outline: 1px solid black; */
+  margin: 3px;
 }
-
-.select-role{
-    outline: 1px solid black;
-    margin: 3px;
+.web-color {
+  background-color: #d9d9d9;
 }
