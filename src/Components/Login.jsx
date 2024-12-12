@@ -1,6 +1,7 @@
 import React from "react";
 import "./login.css";
 import Logo from "./Logo";
+import { Link } from "react-router-dom";
 const Login = () => {
   return (
   <>
@@ -21,7 +22,9 @@ const Login = () => {
         placeholder={"Password"}
       />
       <br />
-      <p className="p-3 ">Forgot Password</p>
+      <p className="p-3 ">
+        <Link to="/signup">Forgot Password ?</Link>
+      </p>
       <div className="role mt-12 text-center ">
         <span>Role :</span>{" "}
         <select
