@@ -3,23 +3,23 @@ import "./login.css";
 
 const Login = () => {
   return (
-    <div className="bg-gray-400 min-h-screen flex items-center justify-center w-full ">
-      <div className="w-10/12 md:w-1/2 lg:w-1/3  h-auto md:h-4/5 max-h-screen rounded-lg shadow-lg bg-white">
-        <form action="" className="bg-white p-6 rounded-lg ">
+    <div className=" min-h-screen flex items-center justify-center w-full ">
+      <div className="w-10/12 md:w-1/2 lg:w-1/4 max-h-screen rounded-lg shadow-lg bg-white">
+        <form action="" className="bg-gray-300 p-6 rounded-lg login-height">
           <input
             type="text"
-            className="input-box mb-6 p-2 border border-gray-300 rounded w-full"
+            className="input-box mb-6 my-5 p-3 border border-gray-300 rounded w-full"
             placeholder={"Username/Email"}
           />
           <br />
-          <input
+          <input  
             type="password"
-            className="input-box  p-2 border border-gray-300 rounded w-full"
+            className="input-box  p-3 mt-5 border border-gray-300 rounded w-full"
             placeholder={"Password"}
           />
           <br />
           <p className="p-3 ">Forgot Password</p>
-          <div className="role text-center ">
+          <div className="role mt-12 text-center ">
             <span>Role :</span>{" "}
             <select
               id=""

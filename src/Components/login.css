@@ -6,3 +6,10 @@
 .web-color {
   background-color: #d9d9d9;
 }
+.login-height{
+  height: 450px;
+}
+
+.signup-height{
+    height: 400px;
+  }
