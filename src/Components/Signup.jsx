@@ -1,9 +1,10 @@
 import React from "react";
-
+import "./login.css";
 function Signup() {
   return (
-    <div className="bg-gray-400 min-h-screen flex items-center justify-center">
-      <form className="bg-white p-6 rounded-lg shadow-lg">
+    <div className=" min-h-screen flex items-center justify-center">
+     <div className="w-10/12 md:w-1/2 lg:w-1/3  h-4/5 md:h-4/5 max-h-screen rounded-lg shadow-lg bg-gray-400">
+     <form className=" web-color p-6 rounded-lg shadow-lg max-h-96">
         <input
           type="text"
           className="input-box mb-4 p-2 border border-gray-300 rounded w-full"
@@ -22,13 +23,16 @@ function Signup() {
           placeholder="E-mail"
         />
         <br />
-        <button
+       <div className="text-center">
+       <button
           type="submit"
-          className=" bg-black text-white py-2 px-4 rounded w-full hover:bg-blue-600"
+          className=" bg-black text-white py-2 px-4 rounded w-2/5 hover:bg-blue-600 "
         >
           Sign up
         </button>
+       </div>
       </form>
+     </div>
     </div>
   );
 }
