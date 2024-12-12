@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import React from 'react';
+import SIGUP from './SIGUP';
 import './App.css'
 import Login from './Components/Login'
 function App() {
@@ -8,6 +10,7 @@ function App() {
     <>
         
           <Login />
+          <SIGUP/>
      
     </>
   )
