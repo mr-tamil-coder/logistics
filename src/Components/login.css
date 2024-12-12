@@ -3,3 +3,8 @@
     padding: 5px;
     margin: 6px;
 }
+
+.select-role{
+    outline: 1px solid black;
+    margin: 3px;
+}
