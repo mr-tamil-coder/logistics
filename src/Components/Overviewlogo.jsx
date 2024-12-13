@@ -12,7 +12,7 @@ import { AiOutlineUser } from "react-icons/ai";
             <img src={ivw} className="logostyle"></img>
             <div className="notification-login">
             <button style={{backgroundColor:"lightgreen"}}><MdNotificationsNone style={{display:"inline-block"}} /></button>
-            <button ><AiOutlineUser style={{marginLeft:"6px"}}/>name</button>
+            <button ><AiOutlineUser style={{marginLeft:"12px",marginBottom:"0px",fontSize:"25px"}}/>name</button>
             </div>
 
         </div> 

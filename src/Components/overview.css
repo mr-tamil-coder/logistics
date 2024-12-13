@@ -1,7 +1,7 @@
 li{
 
     border: rgb(105, 96, 96) solid 1px ;
-    width:200px;
+    width:45px;
     height: 60px;
     padding: 8px;
     font-size: 18px;
@@ -17,4 +17,9 @@ li{
     column-gap: 10px;
     font-size: 20px;
     
+}
+
+
+.styleeffect:hover{
+    display: block;
 }

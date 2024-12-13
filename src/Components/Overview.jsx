@@ -22,15 +22,15 @@ function Overview(){
     <div>
        <Overviewlogo/>
         <ul className='overview-container'>
-            <li><RxDashboard style={{display:"inline-block"}}/>Dashboard</li>
-            <li><AiOutlineUser style={{display:"inline-block"}}/>Customer</li>
-            <li><RiFocus3Line style={{display:"inline-block"}}/>Enquiry</li>
-            <li><BsFillBoxSeamFill style={{display:"inline-block"}}/>Air</li>
-            <li><AiOutlineGlobal style={{display:"inline-block"}}/>Sea</li>
-            <li><TbReport style={{display:"inline-block"}}/>Customer Clearance</li>
-            <li><FaTruckFast style={{display:"inline-block"}}/>Transporter</li>
-            <li><CiLocationArrow1 style={{display:"inline-block"}}/>Opus-corner</li>
-                <li><VscPieChart style={{display:"inline-block"}}/>Reports</li>
+            <li><RxDashboard style={{display:"inline-block"}}/></li>
+            <li><AiOutlineUser style={{display:"inline-block"}}/></li>
+            <li><RiFocus3Line style={{display:"inline-block"}}/></li>
+            <li><BsFillBoxSeamFill style={{display:"inline-block"}}/></li>
+            <li><AiOutlineGlobal style={{display:"inline-block"}}/></li>
+            <li><TbReport style={{display:"inline-block"}}/></li>
+            <li><FaTruckFast style={{display:"inline-block"}}/></li>
+            <li><CiLocationArrow1 style={{display:"inline-block"}}/></li>
+                <li><VscPieChart style={{display:"inline-block"}}/></li>
         </ul>
     </div>
 
