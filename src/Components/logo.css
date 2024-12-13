@@ -1,7 +1,6 @@
-.container{
-    width: 100%;
+.containers{
     height: auto;
-    background-color:rgb(213, 230, 247);
+    background-color:lightgray;
     
 }
 
@@ -16,3 +15,4 @@
 .con{
     width: 100%;
 }
+
