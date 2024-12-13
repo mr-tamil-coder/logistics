@@ -3,13 +3,40 @@
   /* outline: 1px solid black; */
   margin: 3px;
 }
-.web-color {
-  background-color: #d9d9d9;
-}
-.login-height{
+
+.login-height {
   height: 450px;
 }
 
-.signup-height{
-    height: 400px;
+.signup-height {
+  height: 400px;
+}
+
+.zoom-form {
+  border: 2px solid #000;
+  animation: zoomEffect 1s ease-in-out forwards;
+}
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1);
   }
+  50% {
+    transform: scale(1.2); /* Zoom in */
+  }
+  100% {
+    transform: scale(1); /* Zoom out */
+  }
+}
+.input-box {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: transform 0.5s ease-in-out;
+}
+.input-box:focus {
+  transform: scale(1.04);
+}
+.input-box::placeholder {
+  transition: transform 0.3s ease-in-out;
+
+}
