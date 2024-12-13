@@ -20,9 +20,9 @@ const AirExportChart = () => {
 
   return (
     // Wrapper div for responsive styling
-    <div className="w-full max-w-md mx-auto p-4 bg-white rounded-lg shadow-md">
+    <div className="w-auto max-w-md mx-auto p-4 rounded-lg shadow-md">
       <h2 className="text-lg font-bold text-center mb-4">Air Export</h2>
-      <div className="h-64"> {/* Fixed height for the chart */}
+      <div className="h-40"> {/* Fixed height for the chart */}
         <Pie data={data} options={{ maintainAspectRatio: false }} /> {/* Adjust aspect ratio */}
       </div>
     </div>

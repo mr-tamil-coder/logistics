@@ -1,6 +1,6 @@
 import React from "react";
 import "./login.css";
-import Logo from "./Logo";
+import Logo from "./Logo.jsx";
 function Signup() {
   return (
     <>

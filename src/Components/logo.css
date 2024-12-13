@@ -1,6 +1,6 @@
 .containers{
     height: auto;
-    background-color:rgb(213, 230, 247);
+    background-color:lightgray;
     
 }
 
@@ -8,4 +8,11 @@
     height: 110px;
 
     
+
+
+    
 }
+.con{
+    width: 100%;
+}
+
