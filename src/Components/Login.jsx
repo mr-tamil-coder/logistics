@@ -12,18 +12,18 @@ const Login = () => {
     <form action="" className="bg-gray-300 p-6 rounded-lg login-height">
       <input
         type="text"
-        className="input-box mb-6 my-5 p-3 border border-gray-300 rounded w-full"
+        className="input-box zoom-form mb-6 my-5 p-3 border border-gray-300 rounded w-full"
         placeholder={"Username/Email"}
       />
       <br />
       <input  
-        type="password"
+        type="password" 
         className="input-box  p-3 mt-5 border border-gray-300 rounded w-full"
         placeholder={"Password"}
       />
       <br />
       <p className="p-3 ">
-        <Link to="/signup">Forgot Password ?</Link>
+        Forgot Password ?
       </p>
       <div className="role mt-12 text-center ">
         <span>Role :</span>{" "}
@@ -37,7 +37,7 @@ const Login = () => {
           <option value="Port">Port</option>
         </select>
         <br />
-        <p className="py-5">New user? Create account</p>
+        <p className="py-5"><Link to="/signup"> New user? Create account </Link></p>
         <button className="bg-black  text-white py-2 px-4 rounded w-2/5 hover:bg-blue-600">
           Login
         </button>
