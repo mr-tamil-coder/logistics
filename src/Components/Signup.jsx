@@ -26,6 +26,20 @@ function Signup() {
           placeholder="E-mail"
         />
         <br />
+
+        <div className="mt-5 text-center">
+        <span className="font-">Role :</span>{" "}
+        <select
+          id=""
+          className="select-role border border-gray-300 rounded w-1/3 mt-2"
+        >
+          <option value="Customer">Customer</option>
+          <option value="Shipper">Shipper</option>
+          <option value="Agents">Agents</option>
+          <option value="Port">Port</option>
+        </select>
+        <br />
+        </div>
        <div className="text-center mb-3">
        <button
           type="submit"
