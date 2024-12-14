@@ -1,9 +1,10 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import ChartDataLabels from "chartjs-plugin-datalabels" 
 
 // Register Chart.js components (required for React Chart.js 2 to work)
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Legend,ChartDataLabels);
 
 const SeaImport = () => {
   // Chart data and configuration

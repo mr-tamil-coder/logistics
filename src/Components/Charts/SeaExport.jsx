@@ -12,13 +12,21 @@ const SeaExport = () => {
       },
     ],
   };
+  const centerTextPlugin = { id: 'centerText', beforeDraw: function (chart)
+    { const width = chart.width, height = chart.height, ctx = chart.ctx; ctx.restore();
+      const fontSize = (height / 350).toFixed(2); ctx.font = fontSize + 'em sans-serif'; 
+      ctx.textBaseline = 'middle'; 
+      const text = 'Total exports:120'; 
+       const textX = Math.round((width - ctx.measureText(text).width) / 2); 
+       const textY = height / 1.6; 
+       ctx.fillText(text, textX, textY); ctx.save(); }, };
 
   return (
     <div className="w-full max-w-md mx-auto p-4 bg-white rounded-lg shadow-md">
       <div>
         <h2 className="text-lg font-bold text-center mb-4">Sea Export</h2>
         <div className="h-64">
-          <Doughnut data={data} options={{ maintainAspectRatio: false }} />
+          <Doughnut data={data} options={{ maintainAspectRatio: false }} plugins={[centerTextPlugin]} />
         </div>
       </div>
     </div>
