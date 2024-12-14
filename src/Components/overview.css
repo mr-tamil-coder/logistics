@@ -19,3 +19,22 @@
 ul li{
     border-bottom: 2px solid black;
 }
+.nav-container{
+    height: 100%;
+}
+.notification-login{
+    margin-left: 70%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    font-size: 20px;
+   
+    
+}
+
+
+.style-effect{
+    opacity: 0;
+    background-color: aquamarine;
+  color: blue;
+}

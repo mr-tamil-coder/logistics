@@ -19,7 +19,7 @@ function Signup() {
           className="input-box my-4 p-4 border border-gray-300 rounded w-full"
           placeholder="Password"
         />
-        <br />
+        <br/>
         <input
           type="email"
           className="input-box my-4 p-4 border border-gray-300 rounded w-full"

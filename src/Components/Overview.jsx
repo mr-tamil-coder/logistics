@@ -14,6 +14,7 @@ import SeaExport from "./Charts/SeaExport";
 import SeaImport from "./Charts/SeaImport";
 import Overviewlogo from "./Overviewlogo";
 import BarChart from "./Charts/BarChart";
+import Customer from "./Customer";
 import "./overview.css";
 import Sidebar from "./SideBar";
 function Overview() {
@@ -62,7 +63,7 @@ function Overview() {
 
           {selectedTab === "Customer" && (
             <div>
-              <h1 className="text-3xl mx-4">Customer Content Goes Here</h1>
+            <Customer/>
 
             </div>
           )}
