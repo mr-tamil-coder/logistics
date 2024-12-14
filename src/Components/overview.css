@@ -7,7 +7,7 @@ li{
     font-size: 18px;
 
 }
-.overview-container{
+.nav-container{
     height: 100%;
 }
 .notification-login{
@@ -16,10 +16,13 @@ li{
     flex-direction: row;
     column-gap: 10px;
     font-size: 20px;
+   
     
 }
 
 
-.styleeffect:hover{
-    display: block;
+.style-effect{
+    opacity: 0;
+    background-color: aquamarine;
+  color: blue;
 }
