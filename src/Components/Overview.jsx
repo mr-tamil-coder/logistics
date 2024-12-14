@@ -14,87 +14,56 @@ import SeaExport from "./Charts/SeaExport";
 import SeaImport from "./Charts/SeaImport";
 import Overviewlogo from "./Overviewlogo";
 import BarChart from "./Charts/BarChart";
-
+import "./overview.css";
+import Sidebar from "./SideBar";
 function Overview() {
   const [selectedTab, setSelectedTab] = useState("Dashboard");
-
+  const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <div className="flex flex-col h-screen">
-      {/* Header
-      <header className="w-full bg-blue-500 text-white p-4 shadow-md flex justify-between items-center">
-        <img src="" alt="" />
-        <div className="flex items-center space-x-4">
-          <span>Welcome, User</span>
-        </div> 
-      </header>*/}
-      <Overviewlogo />
+      {/* Fixed Header */}
+      <div className="header fixed top-0 left-0 right-0 z-2">
+        <Overviewlogo />
+      </div>
+
+      {/* Navigation Sidebar */}
+      <div
+        className="nav fixed top-32 left-0 h-[calc(100%-8rem)] z-10"
+        onMouseEnter={() => setIsNavOpen(!isNavOpen)}
+        onMouseLeave={() => setIsNavOpen(false)}
+      >
+        <Sidebar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+      </div>
 
       {/* Main Content */}
       <div className="flex flex-grow">
-        {/* Navigation Sidebar */}
-        <ul className="w-52 bg-gray-100 p-4 space-y-4 shadow-md">
-          <li
-            className="flex items-center gap-2 p-3 text-lg cursor-pointer hover:bg-gray-200 rounded-md"
-            onClick={() => setSelectedTab("Dashboard")}
-          >
-            <RxDashboard />
-            Dashboard
-          </li>
-          <li
-            className="flex items-center gap-2 p-3 text-lg cursor-pointer hover:bg-gray-200 rounded-md"
-            onClick={() => setSelectedTab("Customer")}
-          >
-            <AiOutlineUser />
-            Customer
-          </li>
-          <li className="flex items-center gap-2 p-3 text-lg cursor-pointer hover:bg-gray-200 rounded-md">
-            <RiFocus3Line />
-            Enquiry
-          </li>
-          <li className="flex items-center gap-2 p-3 text-lg cursor-pointer hover:bg-gray-200 rounded-md">
-            <BsFillBoxSeamFill />
-            Air
-          </li>
-          <li className="flex items-center gap-2 p-3 text-lg cursor-pointer hover:bg-gray-200 rounded-md">
-            <AiOutlineGlobal />
-            Sea
-          </li>
-          <li className="flex items-center gap-2 p-3 text-lg cursor-pointer hover:bg-gray-200 rounded-md">
-            <TbReport />
-            Customer Clearance
-          </li>
-          <li className="flex items-center gap-2 p-3 text-lg cursor-pointer hover:bg-gray-200 rounded-md">
-            <FaTruckFast />
-            Transporter
-          </li>
-          <li className="flex items-center gap-2 p-3 text-lg cursor-pointer hover:bg-gray-200 rounded-md">
-            <CiLocationArrow1 />
-            Opus-corner
-          </li>
-          <li className="flex items-center gap-2 p-3 text-lg cursor-pointer hover:bg-gray-200 rounded-md">
-            <VscPieChart />
-            Reports
-          </li>
-        </ul>
-
-        {/* Charts Section */}
-        <div className="flex-grow p-4">
+        {/* Adjust Content for Sidebar */}
+        <div
+          className={`flex-grow p-4 ml-16 mt-32 ${
+            isNavOpen ? "ml-64" : ""
+          } overflow-y-auto h-[calc(100vh-1rem)]  `}
+        >
           {selectedTab === "Dashboard" && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div>
               {/* Air Charts */}
-              <div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <AirExportChart />
-              </div>
-              <div>
                 <AirImportChart />
               </div>
 
               {/* Sea Charts */}
-              <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                 <SeaExport />
                 <SeaImport />
                 <BarChart />
               </div>
+            </div>
+          )}
+
+          {selectedTab === "Customer" && (
+            <div>
+              <h1 className="text-3xl mx-4">Customer Content Goes Here</h1>
+
             </div>
           )}
         </div>

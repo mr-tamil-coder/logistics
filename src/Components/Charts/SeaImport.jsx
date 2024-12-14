@@ -1,9 +1,10 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 // Register Chart.js components (required for React Chart.js 2 to work)
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
 const SeaImport = () => {
   // Chart data and configuration
@@ -18,13 +19,30 @@ const SeaImport = () => {
     ],
   };
 
+  const options = {
+    responsive: true,
+    plugins: {
+      datalabels: {
+        color: '#ffffff', // Label text color
+        formatter: (value, context) => {
+          // Format to show percentage
+          const total = context.dataset.data.reduce((a, b) => a + b, 0);
+          const percentage = ((value / total) * 100).toFixed(1) + '%';
+          return percentage;
+        },
+        font: {
+          weight: 'bold',
+        },
+      },
+      legend: {
+        position: 'bottom',
+      },
+    },
+  };
+
   return (
-    // Wrapper div for responsive styling
-    <div className="w-full max-w-md mx-auto p-4 bg-white rounded-lg shadow-md">
-      <h2 className="text-lg font-bold text-center mb-4">Sea Import</h2>
-      <div className="h-64"> {/* Fixed height for the chart */}
-        <Pie data={data} options={{ maintainAspectRatio: false }} /> {/* Adjust aspect ratio */}
-      </div>
+    <div style={{ width: '300px', height: '300px' }}>
+      <Pie data={data} options={options} />
     </div>
   );
 };
