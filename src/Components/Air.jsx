@@ -19,7 +19,7 @@ function Air (){
             <label>MAWB No:</label>
             <input type="text"></input><br />
             <label>MAWB Date:</label>
-            <input type="text"></input><br />
+            <input type="date"></input><br />
             <label>HAWB No:</label>
             <input type="text"></input><br />
             <label>No. of Pkg:</label>
@@ -46,7 +46,7 @@ function Air (){
             <label>Flight No:</label>
             <input type="text"></input><br />
             <label>Flight Date:</label>
-            <input type="text"></input><br />
+            <input type="date"></input><br />
             <label>ETA:</label>
             <input type="text"></input><br />
             <label>ETD:</label>
@@ -57,7 +57,7 @@ function Air (){
             <label>Agent Debit Note:</label>
             <input type="text"></input><br />
             <label>Agent Debit Note Date:</label>
-            <input type="text"></input><br />
+            <input type="date"></input><br />
             <label>Amount:</label>
             <input type="text"></input><br />
             <label>Currency:</label>
@@ -65,7 +65,7 @@ function Air (){
             <label>Airline Debit Note:</label>
             <input type="text"></input><br />
             <label>Airline Debit Note Date:</label>
-            <input type="text"></input>
+            <input type="date"></input>
         </div>
         <div>
             <h1>Documentation and Blling</h1>
