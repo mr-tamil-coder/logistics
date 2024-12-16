@@ -3,6 +3,7 @@ import "./logo.css";
 import ivw from "./img/logo.png";
 import { MdNotificationsNone } from "react-icons/md";
 import { AiOutlineUser } from "react-icons/ai";
+import Profile from "./Profile";
 
 function Overviewlogo() {
   return (
@@ -18,12 +19,7 @@ function Overviewlogo() {
         </button>
 
         {/* User Info */}
-        <div className="text-red-500 flex items-center justify-center flex-col px-5 space-x-2">
-          <AiOutlineUser className="text-3xl" />
-          <div>
-            <p className="text-sm font-medium">Name</p>
-          </div>
-        </div>
+       <Profile />
       </div>
     </div>
   );

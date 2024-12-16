@@ -15,10 +15,11 @@ import SeaImport from "./Charts/SeaImport";
 import Overviewlogo from "./Overviewlogo";
 import BarChart from "./Charts/BarChart";
 import Customer from "./Customer";
-import "./overview.css";  
+import "./overview.css";
 import Sidebar from "./SideBar";
 import Enquiry from "./Enquiry";
-
+import Air from "./Air";
+import SeaInfo from "./SeaInfo";
 function Overview() {
   const [selectedTab, setSelectedTab] = useState("Dashboard");
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -70,12 +71,19 @@ function Overview() {
           )}
           {selectedTab === "Enquiry" && (
             <div>
-            <Enquiry/>
-
+              <Enquiry />
             </div>
           )}
-
-          
+          {selectedTab === "Air" && (
+            <div>
+              <Air />
+            </div>
+          )}
+          {selectedTab === "Sea" && (
+            <div>
+              <SeaInfo />
+            </div>
+          )}
         </div>
       </div>
     </div>

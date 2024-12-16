@@ -54,11 +54,19 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
             <RiFocus3Line className="text-2xl text-blue-500" />
             {isNavOpen && <span>Enquiry</span>}
           </li>
-          <li className="flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md">
+          <li
+            className={`flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md ${
+              selectedTab === "Air" ? "bg-green-300" : "hover:bg-green-300"
+            }`}
+            onClick={() => setSelectedTab("Air")}
+          >
             <BsFillBoxSeamFill className="text-2xl" />
             {isNavOpen && <span>Air</span>}
           </li>
-          <li className="flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md">
+          <li className={`flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md ${
+              selectedTab === "Sea" ? "bg-green-300" : "hover:bg-green-300"
+            }`}
+            onClick={() => setSelectedTab("Sea")}>
             <AiOutlineGlobal className="text-2xl" />
             {isNavOpen && <span>Sea</span>}
           </li>
