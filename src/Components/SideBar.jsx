@@ -38,7 +38,11 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
             {isNavOpen && <span>Dashboard</span>}
           </li>
           <li
-            className="flex items-center gap-2 p-2 text-lg cursor-pointer hover:scale-125 hover:bg-blue-200 rounded-md "
+            className={`flex items-center gap-2 p-2 text-lg cursor-pointer ${
+              selectedTab === "Customer"
+                ? "bg-green-300"
+                : "hover:bg-green-300"
+            } hover:scale-125 hover:bg-blue-200 rounded-md `}
             onClick={() => setSelectedTab("Customer")}
           >
             <AiOutlineUser className="text-2xl text-blue-700" />

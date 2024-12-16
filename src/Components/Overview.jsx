@@ -63,10 +63,10 @@ function Overview() {
 
           {selectedTab === "Customer" && (
             <div>
-            <Customer/>
-
+              <Customer />
             </div>
           )}
+          
         </div>
       </div>
     </div>
