@@ -17,6 +17,8 @@ import BarChart from "./Charts/BarChart";
 import Customer from "./Customer";
 import "./overview.css";
 import Sidebar from "./SideBar";
+import Enquiry from "./Enquiry";
+
 function Overview() {
   const [selectedTab, setSelectedTab] = useState("Dashboard");
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -67,6 +69,14 @@ function Overview() {
 
             </div>
           )}
+          {selectedTab === "Enquiry" && (
+            <div>
+            <Enquiry/>
+
+            </div>
+          )}
+
+          
         </div>
       </div>
     </div>

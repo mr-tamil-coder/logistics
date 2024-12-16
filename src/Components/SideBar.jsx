@@ -44,7 +44,7 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
             <AiOutlineUser className="text-2xl text-blue-700" />
             {isNavOpen && <span>Customer</span>}
           </li>
-          <li className="flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md">
+          <li className="flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md" onClick={() => setSelectedTab("Enquiry")}>
             <RiFocus3Line className="text-2xl text-blue-500" />
             {isNavOpen && <span>Enquiry</span>}
           </li>

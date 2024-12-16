@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Overview from './Components/Overview';
 import Sidebar from './Components/SideBar';
 import Customer from './Components/Customer';
+import Enquiry from './Components/Enquiry';
+import Air from './Components/Air'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +23,8 @@ function App() {
           <Route path="/overview" element={<Overview />} />
           <Route path="/sidebar" element={<Sidebar />} />
           <Route path="/customer" element={<Customer/>}/>
+          <Route path="/enquiry" element={<Enquiry/>}/>
+          <Route path="/air" element={<Air/>}/>
           </Routes>
         </Router>
          
