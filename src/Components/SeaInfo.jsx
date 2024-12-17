@@ -18,15 +18,15 @@ const SeaInfo = () => {
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4">
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-2">
               <label className="label w-full lg:w-3/4 sm:w-1/3">Co-Leader:</label>
               <input
                 type="text"
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">:</label>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-2">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">Container Load:</label>
               <input
                 type="text"
                 className="label-input w-full border px-3 border-slate-800 rounded"
@@ -43,14 +43,14 @@ const SeaInfo = () => {
             </div>
           </div>
 
-          {/* Shipping and Package Details */}
+          {/* Shipping Details */}
           <div className="mb-6">
             <h1 className="customer-heading text-lg font-bold mb-4">
-              Shipping and Package Details
+              Shipping Details
             </h1>
             <div className="field-center grid lg:grid-cols-2 gap-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Shipping Bill No:
+               MBL NO:
               </label>
               <input
                 type="text"
@@ -59,23 +59,7 @@ const SeaInfo = () => {
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Shipping Bill Date:
-              </label>
-              <input
-                type="date"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">MAWB No:</label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">
-                MAWB Date:
+                Container No:
               </label>
               <input
                 type="date"
@@ -83,7 +67,7 @@ const SeaInfo = () => {
               />
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">HAWB No:</label>
+              <label className="label w-full lg:w-3/4 sm:w-1/3">HBL No:</label>
               <input
                 type="text"
                 className="label-input w-full border px-3 border-slate-800 rounded"
@@ -91,7 +75,23 @@ const SeaInfo = () => {
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                No. of Pkg:
+                No of Package:
+              </label>
+              <input
+                type="number"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">GWeight:</label>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+                CBM:
               </label>
               <input
                 type="number"
@@ -100,7 +100,7 @@ const SeaInfo = () => {
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                G.Weight:
+                Dimension:
               </label>
               <input
                 type="text"
@@ -109,44 +109,28 @@ const SeaInfo = () => {
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Ch. Weight:
+                Commodity
               </label>
               <input
                 type="text"
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Dimensions:
-              </label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Commodity:
-              </label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
+            
+            
           </div>
         </div>
 
         {/* Right Column */}
         <div className="second">
-          {/* Port and Flight Details */}
+          {/*  Billing Information */}
           <div className="mb-6">
             <h1 className="customer-heading text-lg font-bold mb-4">
-              Port and Flight Details
+              Billing Information
             </h1>
             <div className="field-center grid lg:grid-cols-2 gap-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Terms of Shipment:
+                Shipper Invoice No :
               </label>
               <input
                 type="text"
@@ -155,7 +139,7 @@ const SeaInfo = () => {
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Origin Port:
+                Amount:
               </label>
               <input
                 type="text"
@@ -164,7 +148,7 @@ const SeaInfo = () => {
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Destination Port:
+                Currency:
               </label>
               <input
                 type="text"
@@ -173,46 +157,14 @@ const SeaInfo = () => {
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Airlines Name:
-              </label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Flight No:
-              </label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Flight Date:
+                Date:
               </label>
               <input
                 type="date"
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">ETA:</label>
-              <input
-                type="date"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">ETD:</label>
-              <input
-                type="date"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-          </div>
+            
 
           {/* Agent and Linear Details */}
           <div className="mb-6">
@@ -230,7 +182,7 @@ const SeaInfo = () => {
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Agent Debit Note Date:
+                Date:
               </label>
               <input
                 type="date"
@@ -255,7 +207,7 @@ const SeaInfo = () => {
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Airline Debit Note:
+                Liner Debit Note:
               </label>
               <input
                 type="text"
@@ -264,7 +216,7 @@ const SeaInfo = () => {
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Airline Debit Note Date:
+                 Date:
               </label>
               <input
                 type="date"
@@ -273,14 +225,14 @@ const SeaInfo = () => {
             </div>
           </div>
 
-          {/* Documentation and Billing */}
+          {/* Customer Clearance */}
           <div className="mb-6">
             <h1 className="customer-heading text-lg font-bold mb-4">
-              Documentation and Billing
+              Customer Clearance
             </h1>
             <div className="field-center grid lg:grid-cols-2 gap-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Shipper Invoice No:
+                CHA:
               </label>
               <input
                 type="text"
@@ -288,24 +240,15 @@ const SeaInfo = () => {
               />
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">Amount:</label>
+              <label className="label w-full lg:w-3/4 sm:w-1/3">Date:</label>
               <input
-                type="number"
+                type="date"
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Currency:
-              </label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Consol Manifest:
+                LEO Issued or Not:
               </label>
               <input
                 type="text"
@@ -314,14 +257,144 @@ const SeaInfo = () => {
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Airline DO Issued or Not:
+              EGM:
               </label>
-              <select className="label-input w-full border px-3 border-slate-800 rounded">
-                <option>Yes</option>
-                <option>No</option>
-              </select>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
             </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+                Shipping Invoice No:
+              </label>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            </div>
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+              IGM Control Manifest:
+              </label>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            </div>
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+              BOE No:
+              </label>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+              Date:
+              </label>
+              <input
+                type="date"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            
+            
+            </div>
+            <div className="mb-6">
+            <h1 className="customer-heading text-lg font-bold mb-4">
+              Port Details
+            </h1>
+            <div className="field-center grid lg:grid-cols-2 gap-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+                Terms of Shipment:
+              </label>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">Origin Port:</label>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+                Destination Port:
+              </label>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+              Shipping Line:
+              </label>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+                Vessel Name:
+              </label>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            </div>
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+              Voyage No:
+              </label>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            </div>
+            
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+              ETA:
+              </label>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+              ETD:
+              </label>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            
+            
+            
+          
           </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+              Vessel Berthing Date:
+              </label>
+              <input
+                type="Date"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+              
+          
+        </div>
         </div>
       </form>
     </div>
