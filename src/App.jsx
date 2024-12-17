@@ -10,6 +10,7 @@ import Customer from "./Components/Customer";
 import Enquiry from "./Components/Enquiry";
 import Air from "./Components/Air";
 import SeaImport from "./Components/SeaInfo";
+import AirImportChart from "./Components/Charts/AirImportChart";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -26,6 +27,8 @@ function App() {
           <Route path="/enquiry" element={<Enquiry />} />
           {/* <Route path="/air" element={<Air />} /> */}
           <Route path="/sea" element={<SeaImport />} />
+          <Route path="/air" element={<AirImportChart />} />
+
         </Routes>
       </Router>
     </>

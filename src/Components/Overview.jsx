@@ -24,7 +24,7 @@ function Overview() {
   return (
     <div className="flex flex-col h-screen">
       {/* Fixed Header */}
-      <div className="header fixed top-0 left-0 right-0 z-2">
+      <div className="header fixed top-0 left-0 right-0 z-10 ">
         <Overviewlogo isAirTabActive={isAirTabActive} />
       </div>
 
@@ -48,13 +48,13 @@ function Overview() {
           {selectedTab === "Dashboard" && (
             <div>
               {/* Air Charts */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="flex justify-center items-center flex-wrap ">
                 <AirExportChart />
                 <AirImportChart />
               </div>
 
               {/* Sea Charts */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+              <div className="flex  justify-start items-center flex-wrap ">
                 <SeaExport />
                 <SeaImport />
                 <BarChart />
