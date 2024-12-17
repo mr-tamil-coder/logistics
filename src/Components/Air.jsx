@@ -3,7 +3,7 @@ import React from "react";
 function Air() {
   return (
     <div className="ml-12 p-4">
-      <form className="grid grid-cols-1 gap-4 lg:gap-20 md:grid-cols-2">
+      <form className="grid grid-cols-1 gap-4 lg:gap-20 lg:grid-cols-3 md:grid-cols-2">
         {/* Left Column */}
         <div className="first">
           {/* Job Details */}
@@ -258,7 +258,8 @@ function Air() {
               />
             </div>
           </div>
-
+        </div>
+        <div>
           {/* Documentation and Billing */}
           <div className="mb-6">
             <h1 className="customer-heading text-lg font-bold mb-4">

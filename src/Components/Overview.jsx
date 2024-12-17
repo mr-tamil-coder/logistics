@@ -15,11 +15,16 @@ import SeaInfo from "./SeaInfo";
 function Overview() {
   const [selectedTab, setSelectedTab] = useState("Dashboard");
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isAirTabActive, setIsAirTabActive] = useState(false);
+  const handleTabChange = (tab) => {
+    setSelectedTab(tab);
+    setIsAirTabActive(tab === "Air");
+  };
   return (
     <div className="flex flex-col h-screen">
       {/* Fixed Header */}
       <div className="header fixed top-0 left-0 right-0 z-2">
-        <Overviewlogo />
+        <Overviewlogo isAirTabActive={isAirTabActive} />
       </div>
 
       {/* Navigation Sidebar */}
@@ -28,7 +33,7 @@ function Overview() {
         onMouseEnter={() => setIsNavOpen(!isNavOpen)}
         onMouseLeave={() => setIsNavOpen(false)}
       >
-        <Sidebar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+        <Sidebar selectedTab={selectedTab} handleTabChange={handleTabChange} />
       </div>
 
       {/* Main Content */}

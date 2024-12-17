@@ -8,7 +8,7 @@ import { FaTruckFast } from "react-icons/fa6";
 import { CiLocationArrow1 } from "react-icons/ci";
 import { VscPieChart } from "react-icons/vsc";
 
-const Sidebar = ({ selectedTab, setSelectedTab }) => {
+const Sidebar = ({ selectedTab, handleTabChange }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
@@ -27,9 +27,9 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
             className={`flex items-center gap-2 p-2 text-lg cursor-pointer rounded-md ${
               selectedTab === "Dashboard"
                 ? "bg-green-300"
-                : "hover:bg-green-300"
-            } hover:scale-125 hover:bg-blue-200 `}
-            onClick={() => setSelectedTab("Dashboard")}
+                : "hover:bg-blue-200"
+            } hover:scale-125  `}
+            onClick={() => handleTabChange("Dashboard")}
           >
             <div className="icons text-3xl">
               <RxDashboard className="text-green-400" />
@@ -38,35 +38,35 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
           </li>
           <li
             className={`flex items-center gap-2 p-2 text-lg cursor-pointer ${
-              selectedTab === "Customer" ? "bg-green-300" : "hover:bg-green-300"
+              selectedTab === "Customer" ? "bg-green-300" : "hover:bg-blue-200"
             } hover:scale-125 hover:bg-blue-200 rounded-md `}
-            onClick={() => setSelectedTab("Customer")}
+            onClick={() => handleTabChange("Customer")}
           >
             <AiOutlineUser className="text-2xl text-blue-700" />
             {isNavOpen && <span>Customer</span>}
           </li>
           <li
             className={`flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md ${
-              selectedTab === "Enquiry" ? "bg-green-300" : "hover:bg-green-300"
+              selectedTab === "Enquiry" ? "bg-green-300" : "hover:bg-blue-200"
             }`}
-            onClick={() => setSelectedTab("Enquiry")}
+            onClick={() => handleTabChange("Enquiry")}
           >
             <RiFocus3Line className="text-2xl text-blue-500" />
             {isNavOpen && <span>Enquiry</span>}
           </li>
           <li
             className={`flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md ${
-              selectedTab === "Air" ? "bg-green-300" : "hover:bg-green-300"
+              selectedTab === "Air" ? "bg-green-300" : "hover:bg-blue-200"
             }`}
-            onClick={() => setSelectedTab("Air")}
+            onClick={() => handleTabChange("Air")}
           >
             <BsFillBoxSeamFill className="text-2xl" />
             {isNavOpen && <span>Air</span>}
           </li>
           <li className={`flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md ${
-              selectedTab === "Sea" ? "bg-green-300" : "hover:bg-green-300"
+              selectedTab === "Sea" ? "bg-green-300" : "hover:bg-blue-200"
             }`}
-            onClick={() => setSelectedTab("Sea")}>
+            onClick={() => handleTabChange("Sea")}>
             <AiOutlineGlobal className="text-2xl" />
             {isNavOpen && <span>Sea</span>}
           </li>
