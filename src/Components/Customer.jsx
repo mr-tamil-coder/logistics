@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaSave } from "react-icons/fa";
+import "./customer.css";
+import FileExplorer from "./FileExplorer";
 // import "./customer.css"
 function Customer() {
+  const [fileName, setFileName] = useState({
+    pan: "Upload Pan Card",
+    tan: "Upload Tan Card",
+    aadhaar: "Upload Aadhaar Card",
+    telephone: "Upload Telephone Bill",
+    bankCheque: "Upload Bank Cheque",
+    creditForm: "Upload Credit Form",
+    incorporation: "Upload Incorporation",
+    gstForm: "Upload GST Form",
+  });
+  const handleFileSelect = (key, name) => {
+    setFileName((prev) => ({
+      ...prev,
+      [key]: name,
+    }));
+  };
   return (
     <div className="ml-12 p-4">
       <form className="grid grid-cols-1 gap-4 lg:gap-20 md:grid-cols-2">
@@ -18,8 +36,7 @@ function Customer() {
               </label>
               <input
                 type="text"
-                className="label-input w-full md:w-2/4  lg:w-3/4 border px-3 border-slate-800"
-               
+                className="label-input w-full md:w-2/4  lg:w-3/4 border px-1 border-slate-800"
               />
             </div>
             <div className="grid lg:grid-cols-2  gap-4 mt-4">
@@ -29,7 +46,6 @@ function Customer() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4  lg:w-3/4 border px-3 border-slate-800"
-                
               />
             </div>
             <div className="grid lg:grid-cols-2 gap-4 mt-4">
@@ -39,7 +55,6 @@ function Customer() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4  lg:w-3/4 border px-3 border-slate-800"
-                
               />
             </div>
             <div className="grid lg:grid-cols-2 gap-4 mt-4">
@@ -49,7 +64,6 @@ function Customer() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4  lg:w-3/4 border px-3 border-slate-800"
-                
               />
             </div>
             <div className="grid lg:grid-cols-2 gap-4 mt-4">
@@ -59,7 +73,6 @@ function Customer() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4  lg:w-3/4 border px-3 border-slate-800"
-                
               />
             </div>
             <div className="grid lg:grid-cols-2 gap-4 mt-4">
@@ -69,7 +82,6 @@ function Customer() {
               <input
                 type="email"
                 className="label-input w-full md:w-2/4  lg:w-3/4 border px-3 border-slate-800"
-                
               />
             </div>
           </div>
@@ -86,7 +98,6 @@ function Customer() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4  lg:w-3/4 border px-3 border-slate-800"
-                
               />
             </div>
           </div>
@@ -118,14 +129,13 @@ function Customer() {
         </div>
 
         {/* Right Column */}
-        <div className="second  ">
+        <div className="second   px-3">
           <div className="grid grid-cols-2 gap-2  w-full ">
             <div className="mb-6">
               <h1 className="font-bold mb-4">Customer Requirements</h1>
               <textarea
                 rows={5}
-                className="w-full  rounded p-2 border border-slate-800"
-                
+                className="w-full  rounded p-2 border border-slate-800 label-input"
               ></textarea>
             </div>
             <div className="mb-6">
@@ -133,8 +143,7 @@ function Customer() {
               <textarea
                 rows={5}
                 cols={2}
-                className="w-full border border-slate-800 rounded p-2"
-                
+                className="w-full border border-slate-800 rounded p-2 label-input"
               ></textarea>
             </div>
           </div>
@@ -147,36 +156,45 @@ function Customer() {
                 <div className="relative mb-4">
                   <input
                     type="text"
-                    className="w-full border border-slate-800 rounded p-2"
-                    
+                    className="w-full border border-slate-800 rounded p-2 label-input"
+                    placeholder={fileName.pan}
                   />
-                  <FaSave className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500" />
+                  <FileExplorer
+                    handleFile={(name) => handleFileSelect("pan", name)}
+                  />
                 </div>
                 <label>TAN Copy:</label>
                 <div className="relative mb-4">
                   <input
                     type="text"
-                    className="w-full border border-slate-800 rounded p-2"
+                    className="w-full border label-input border-slate-800 rounded p-2"
+                    placeholder={fileName.tan}
                   />
-                  <FaSave className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500" />
+                  <FileExplorer
+                    handleFile={(name) => handleFileSelect("tan", name)}
+                  />
                 </div>
                 <label>Aadhaar Copy:</label>
                 <div className="relative mb-4">
                   <input
                     type="text"
-                    className="w-full border border-slate-800 rounded p-2"
-                    
+                    className="w-full border label-input border-slate-800 rounded p-2"
+                    placeholder={fileName.aadhaar}
                   />
-                  <FaSave className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500" />
+                  <FileExplorer
+                    handleFile={(name) => handleFileSelect("aadhaar", name)}
+                  />
                 </div>
                 <label>Telephone Copy:</label>
-                <div className="relative mb-4">
+                <div className="relative mb-4 ">
                   <input
                     type="text"
-                    className="w-full border rounded p-2"
-                    
+                    className="w-full label-input border border-slate-800  rounded p-2"
+                    placeholder={fileName.telephone}
                   />
-                  <FaSave className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500" />
+                  <FileExplorer
+                    handleFile={(name) => handleFileSelect("telephone", name)}
+                  />
                 </div>
               </div>
               <div className="mt-4">
@@ -185,44 +203,51 @@ function Customer() {
                 <div className="relative mb-4">
                   <input
                     type="text"
-                    className="w-full border rounded p-2"
-                   
+                    className="w-full label-input border border-slate-800 rounded p-2"
+                    placeholder={fileName.bankCheque}
                   />
-                  <FaSave className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500" />
+                    <FileExplorer
+                    handleFile={(name) => handleFileSelect("bankCheque", name)}
+                  />
                 </div>
                 <label>Credit Application Form:</label>
                 <div className="relative mb-4">
                   <input
                     type="text"
-                    className="w-full border rounded p-2"
-                   
+                    className="w-full label-input border border-slate-800 rounded p-2"
+                    placeholder={fileName.creditForm}
                   />
-                  <FaSave className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500" />
+                     <FileExplorer
+                    handleFile={(name) => handleFileSelect("creditForm", name)}
+                  />
                 </div>
                 <label>Incorporation Certificate:</label>
                 <div className="relative mb-4">
                   <input
                     type="text"
-                    className="w-full border rounded p-2"
-                   
+                    className="w-full label-input  border border-slate-800 rounded p-2"
+                    placeholder={fileName.incorporation}
                   />
-                  <FaSave className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500" />
+                     <FileExplorer
+                    handleFile={(name) => handleFileSelect("incorporation", name)}
+                  />
                 </div>
                 <label>GST Form 6 Annexure B:</label>
                 <div className="relative mb-4">
                   <input
                     type="text"
-                    className="w-full border rounded p-2"
-                   
+                    className="w-full label-input border border-slate-800 rounded p-2"
+                    placeholder={fileName.gstForm}
                   />
-                  <FaSave className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500" />
+                     <FileExplorer
+                    handleFile={(name) => handleFileSelect("gst", name)}
+                  />
                 </div>
               </div>
             </div>
           </div>
           <div className="mt-6 flex justify-end space-x-4">
-           
-          <button className="px-4 py-2 bg-green-500 text-white rounded">
+            <button className="px-4 py-2 bg-green-500 text-white rounded">
               Upload
             </button>
             <button className="px-4 py-2 bg-green-500 text-white rounded">

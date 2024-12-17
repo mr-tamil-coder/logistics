@@ -12,7 +12,7 @@ const Login = () => {
     <form action="" className="bg-gray-300 p-6 rounded-lg login-height">
       <input
         type="text"
-        className="input-box zoom-form mb-6 my-5 p-3 border border-gray-300 rounded w-full"
+        className="input-box  mb-6 my-5 p-3 border border-gray-300 rounded w-full"
         placeholder={"Username/Email"}
       />
       <br />
