@@ -9,6 +9,7 @@ import Sidebar from "./Components/SideBar";
 import Customer from "./Components/Customer";
 import Enquiry from "./Components/Enquiry";
 import Air from "./Components/Air";
+import Airexport from "./Components/Airexport";
 import SeaImport from "./Components/SeaInfo";
 function App() {
   const [count, setCount] = useState(0);
@@ -26,6 +27,7 @@ function App() {
           <Route path="/enquiry" element={<Enquiry />} />
           {/* <Route path="/air" element={<Air />} /> */}
           <Route path="/sea" element={<SeaImport />} />
+          <Route path="/airexport" element={<Airexport />} />
         </Routes>
       </Router>
     </>

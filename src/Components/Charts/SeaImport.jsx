@@ -42,6 +42,7 @@ const SeaImport = () => {
 
   return (
     <div style={{ width: '300px', height: '300px' }}>
+      <h2 className="text-lg font-bold text-center mb-4">Sea Import</h2>
       <Pie data={data} options={options} />
     </div>
   );

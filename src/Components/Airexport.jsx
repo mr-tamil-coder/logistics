@@ -1,6 +1,6 @@
 import React from "react";
 
-const SeaInfo = () => {
+function Airexport() {
   return (
     <div className="ml-12 p-4">
       <form className="grid grid-cols-1 gap-4 lg:gap-20 md:grid-cols-2">
@@ -18,20 +18,15 @@ const SeaInfo = () => {
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4">
+
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">Co-Leader:</label>
               <input
                 type="text"
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">:</label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
+
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
                 Agent Name:
@@ -326,6 +321,6 @@ const SeaInfo = () => {
       </form>
     </div>
   );
-};
+}
 
-export default SeaInfo;
+export default Airexport
