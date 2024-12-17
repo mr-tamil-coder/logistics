@@ -27,10 +27,15 @@
 
 
         <div className="flex justify-center items-center gap-4">
+        <div style={{display:"flex",marginRight:"300px"}}>
+            <button style={{border:"1px solid black",fontSize:"20px",paddingtop:"3px",paddingBottom:"3px",paddingRight:"100px",paddingLeft:"100px",marginLeft:"10px"}}>Air Import</button>
+            <button style={{border:"1px solid black",fontSize:"20px",paddingtop:"3px",paddingBottom:"3px",paddingRight:"100px",paddingLeft:"100px"}}>Air Export</button>
+          </div>
           {/* Notific+ications */}
           <button className="bg-green-400 text-white text-2xl h-12 w-16   flex justify-center items-center rounded-xl hover:bg-gray-600">
             <MdNotificationsNone />
           </button>
+          
 
           {/* User Info */}
           <Profile />

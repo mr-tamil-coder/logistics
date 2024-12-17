@@ -24,7 +24,7 @@ function App() {
           <Route path="/sidebar" element={<Sidebar />} />
           <Route path="/customer" element={<Customer />} />
           <Route path="/enquiry" element={<Enquiry />} />
-          <Route path="/air" element={<Air />} />
+          {/* <Route path="/air" element={<Air />} /> */}
           <Route path="/sea" element={<SeaImport />} />
         </Routes>
       </Router>

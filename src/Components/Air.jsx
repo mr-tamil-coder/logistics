@@ -315,4 +315,4 @@ function Air() {
   );
 }
 
-export default Air;
+export default Air
