@@ -23,7 +23,7 @@ const Login = () => {
       />
       <br />
       <p className="p-3 ">
-        Forgot Password ?
+        <Link to="/forget">Forgot Password ?</Link>
       </p>
       <div className="role mt-12 text-center ">
         <span>Role :</span>{" "}
