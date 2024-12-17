@@ -19,6 +19,8 @@ import "./overview.css";
 import Sidebar from "./SideBar";
 import Enquiry from "./Enquiry";
 
+import SeaInfo from "./SeaInfo";
+import Air from "./Air";
 function Overview() {
   const [selectedTab, setSelectedTab] = useState("Dashboard");
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -65,18 +67,24 @@ function Overview() {
 
           {selectedTab === "Customer" && (
             <div>
-            <Customer/>
-
+              <Customer />
             </div>
           )}
           {selectedTab === "Enquiry" && (
             <div>
-            <Enquiry/>
-
+              <Enquiry />
             </div>
           )}
-
-          
+          {selectedTab === "Air" && (
+            <div>
+              <Air />
+            </div>
+          )}
+          {selectedTab === "Sea" && (
+            <div>
+              <SeaInfo />
+            </div>
+          )}
         </div>
       </div>
     </div>

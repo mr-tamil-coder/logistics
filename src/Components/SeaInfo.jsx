@@ -1,6 +1,6 @@
 import React from "react";
 
-function Air() {
+const SeaInfo = () => {
   return (
     <div className="ml-12 p-4">
       <form className="grid grid-cols-1 gap-4 lg:gap-20 md:grid-cols-2">
@@ -312,6 +312,6 @@ function Air() {
       </form>
     </div>
   );
-}
+};
 
-export default Air
+export default SeaInfo;
