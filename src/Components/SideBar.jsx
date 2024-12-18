@@ -82,8 +82,8 @@ const Sidebar = ({ selectedTab, handleTabChange }) => {
             <CiLocationArrow1 className="text-2xl text-violet-700" />
             {isNavOpen && <span>Opus-corner</span>}
           </li>
-          <li className="flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md">
-            <VscPieChart className="text-2xl text-red-500" />
+          <li className={`flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md`}>
+            <VscPieChart className="text-2xl text-red-500"/>
             {isNavOpen && <span>Reports</span>}
           </li>
         </ul>

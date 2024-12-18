@@ -82,6 +82,11 @@ function Overview() {
               <SeaInfo />
             </div>
           )}
+          {selectedTab === "Report" && (
+            <div>
+              <Air />
+            </div>
+          )}
         </div>
       </div>
     </div>
