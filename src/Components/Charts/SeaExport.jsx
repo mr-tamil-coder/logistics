@@ -1,14 +1,21 @@
-import React from 'react';
-import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer } from 'recharts';
-import "../customer.css"
+import React from "react";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Legend,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+import "../customer.css";
 
 const SeaExport = () => {
   // Prepare data for Recharts with additional details
   const data = [
-    { name: 'Active', value: 40, color: '#4caf50' },
-    { name: 'Ready to Load', value: 12, color: '#ff9800' },
-    { name: 'Ready to Unload', value: 3, color: '#2196f3' },
-    { name: 'Delayed', value: 23, color: '#f44336' }
+    { name: "Active", value: 40, color: "#4caf50" },
+    { name: "Ready to Load", value: 12, color: "#ff9800" },
+    { name: "Ready to Unload", value: 3, color: "#2196f3" },
+    { name: "Delayed", value: 23, color: "#f44336" },
   ];
 
   // Calculate total
@@ -41,8 +48,8 @@ const SeaExport = () => {
   // Safe center text component
   const CenterText = (props) => {
     // Safely handle undefined props
-    const cx = props.cx || props.viewBox?.cx || '50%';
-    const cy = props.cy || props.viewBox?.cy || '50%';
+    const cx = props.cx || props.viewBox?.cx || "50%";
+    const cy = props.cy || props.viewBox?.cy || "50%";
 
     return (
       <text
@@ -51,9 +58,9 @@ const SeaExport = () => {
         textAnchor="middle"
         dominantBaseline="middle"
         className="recharts-text recharts-label"
-        fill="black"
+        fill="#333"
         fontWeight="bold"
-        fontSize="16"
+        fontSize="14"
       >
         Total Exports: 78
       </text>
@@ -61,9 +68,9 @@ const SeaExport = () => {
   };
 
   return (
-    <div className="w-full max-w-xl mx-auto p-4 bg-white rounded-lg ">
-      <h2 className="text-lg font-bold mx-12 ">Sea Export</h2>
-      <div className="h-80 relative">
+    <div className="w-3/6  p-4 rounded-lg ">
+      <h2 className="text-lg font-bold text-center">Sea Export </h2>
+      <div className="h-72 relative ">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie
@@ -82,7 +89,7 @@ const SeaExport = () => {
               ))}
             </Pie>
             <Pie
-              data={[{ name: 'center', value: 1}]}
+              data={[{ name: "center", value: 123 }]}
               dataKey="value"
               nameKey="name"
               cx="50%"
@@ -91,22 +98,21 @@ const SeaExport = () => {
               fill="transparent"
               label={CenterText}
             />
-            <Tooltip 
+            <Tooltip
               formatter={(value, name) => {
                 const percentage = ((value / total) * 100).toFixed(1);
                 return [`${value} (${percentage}%)`, name];
               }}
             />
-            <Legend 
+            <Legend
               layout="vertical"
               verticalAlign="middle"
               align="right"
-              wrapperStyle={{ paddingLeft: '20px' }}
+              wrapperStyle={{ paddingLeft: "20px" }}
               formatter={(value, entry) => {
                 const { payload } = entry;
                 const percentage = ((payload.value / total) * 100).toFixed(1);
                 {
-                  
                   return (
                     value != "center" && (
                       <span style={{ color: "black", fontWeight: "bold" }}>
@@ -115,9 +121,7 @@ const SeaExport = () => {
                     )
                   );
                 }
-              
-                }
-              }
+              }}
             />
           </PieChart>
         </ResponsiveContainer>

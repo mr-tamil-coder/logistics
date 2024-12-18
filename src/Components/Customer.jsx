@@ -5,14 +5,14 @@ import FileExplorer from "./FileExplorer";
 // import "./customer.css"
 function Customer() {
   const [fileName, setFileName] = useState({
-    pan: "Upload Pan Card",
-    tan: "Upload Tan Card",
-    aadhaar: "Upload Aadhaar Card",
-    telephone: "Upload Telephone Bill",
-    bankCheque: "Upload Bank Cheque",
-    creditForm: "Upload Credit Form",
-    incorporation: "Upload Incorporation",
-    gstForm: "Upload GST Form",
+    pan: "",
+    tan: "",
+    aadhaar: "",
+    telephone: "",
+    bankCheque: "",
+    creditForm: "",
+    incorporation: "",
+    gstForm: "",
   });
   const handleFileSelect = (key, name) => {
     setFileName((prev) => ({
@@ -156,8 +156,10 @@ function Customer() {
                 <div className="relative mb-4">
                   <input
                     type="text"
-                    className="w-full border border-slate-800 rounded p-2 label-input"
-                    placeholder={fileName.pan}
+                    className="w-full border border-slate-800  rounded p-2 label-input"
+                    placeholder="Upload PAN Card"
+                    value={fileName.pan}
+                    readOnly
                   />
                   <FileExplorer
                     handleFile={(name) => handleFileSelect("pan", name)}
@@ -168,7 +170,9 @@ function Customer() {
                   <input
                     type="text"
                     className="w-full border label-input border-slate-800 rounded p-2"
-                    placeholder={fileName.tan}
+                    placeholder="Upload TAN Card"
+                    value={fileName.tan}
+                    readOnly
                   />
                   <FileExplorer
                     handleFile={(name) => handleFileSelect("tan", name)}
@@ -179,7 +183,9 @@ function Customer() {
                   <input
                     type="text"
                     className="w-full border label-input border-slate-800 rounded p-2"
-                    placeholder={fileName.aadhaar}
+                    placeholder="Upload aadhaar  Card"
+                    value={fileName.aadhaar}
+                    readOnly
                   />
                   <FileExplorer
                     handleFile={(name) => handleFileSelect("aadhaar", name)}
@@ -190,7 +196,9 @@ function Customer() {
                   <input
                     type="text"
                     className="w-full label-input border border-slate-800  rounded p-2"
-                    placeholder={fileName.telephone}
+                    placeholder="Upload Telephone "
+                    value={fileName.telephone}
+                    readOnly
                   />
                   <FileExplorer
                     handleFile={(name) => handleFileSelect("telephone", name)}
@@ -204,9 +212,11 @@ function Customer() {
                   <input
                     type="text"
                     className="w-full label-input border border-slate-800 rounded p-2"
-                    placeholder={fileName.bankCheque}
+                    placeholder="Upload Bank Cheque"
+                    value={fileName.bankCheque}
+                    readOnly
                   />
-                    <FileExplorer
+                  <FileExplorer
                     handleFile={(name) => handleFileSelect("bankCheque", name)}
                   />
                 </div>
@@ -215,9 +225,11 @@ function Customer() {
                   <input
                     type="text"
                     className="w-full label-input border border-slate-800 rounded p-2"
-                    placeholder={fileName.creditForm}
+                    placeholder="Upload Bank Cheque"
+                    value={fileName.creditForm}
+                    readOnly
                   />
-                     <FileExplorer
+                  <FileExplorer
                     handleFile={(name) => handleFileSelect("creditForm", name)}
                   />
                 </div>
@@ -226,10 +238,14 @@ function Customer() {
                   <input
                     type="text"
                     className="w-full label-input  border border-slate-800 rounded p-2"
-                    placeholder={fileName.incorporation}
+                    placeholder="Upload Incorporation Certificate"
+                    value={fileName.incorporation}
+                    readOnly
                   />
-                     <FileExplorer
-                    handleFile={(name) => handleFileSelect("incorporation", name)}
+                  <FileExplorer
+                    handleFile={(name) =>
+                      handleFileSelect("incorporation", name)
+                    }
                   />
                 </div>
                 <label>GST Form 6 Annexure B:</label>
@@ -237,9 +253,11 @@ function Customer() {
                   <input
                     type="text"
                     className="w-full label-input border border-slate-800 rounded p-2"
-                    placeholder={fileName.gstForm}
+                    placeholder="Upload GST Form"
+                    value={fileName.gstForm}
+                    readOnly
                   />
-                     <FileExplorer
+                  <FileExplorer
                     handleFile={(name) => handleFileSelect("gst", name)}
                   />
                 </div>

@@ -10,13 +10,15 @@ import Customer from "./Customer";
 import "./overview.css";
 import Sidebar from "./SideBar";
 import Enquiry from "./Enquiry";
-
 import SeaInfo from "./SeaInfo";
-import Air from "./Air";
+import AirImportData from "./AirImportData";
+import AirExportData from "./AirexportData";
+
 function Overview() {
   const [selectedTab, setSelectedTab] = useState("Dashboard");
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isAirTabActive, setIsAirTabActive] = useState(false);
+  const [activeAirTab, setActiveAirTab] = useState("Air Import");
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
     setIsAirTabActive(tab === "Air");
@@ -25,12 +27,16 @@ function Overview() {
     <div className="flex flex-col h-screen">
       {/* Fixed Header */}
       <div className="header fixed top-0 left-0 right-0 z-10 ">
-        <Overviewlogo isAirTabActive={isAirTabActive} />
+        <Overviewlogo
+          isAirTabActive={isAirTabActive}
+          activeAirTab={activeAirTab}
+          setActiveAirTab={setActiveAirTab}
+        />
       </div>
-
+      {console.log("d" + activeAirTab)}
       {/* Navigation Sidebar */}
       <div
-        className="nav fixed top-32 left-0 h-[calc(100%-8rem)] z-10"
+        className="nav fixed top-28 left-0 h-[calc(100%-8rem)] z-10"
         onMouseEnter={() => setIsNavOpen(!isNavOpen)}
         onMouseLeave={() => setIsNavOpen(false)}
       >
@@ -48,15 +54,15 @@ function Overview() {
           {selectedTab === "Dashboard" && (
             <div>
               {/* Air Charts */}
-              <div className="flex justify-center items-center flex-wrap ">
+              <div className="flex  ">
                 <AirExportChart />
                 <AirImportChart />
               </div>
 
-              {/* Sea Charts */}
+              {/* Sea Charts  */}
               <div className="flex  justify-start items-center flex-wrap ">
-                <SeaExport />
                 <SeaImport />
+                <SeaExport />
                 <BarChart />
               </div>
             </div>
@@ -73,10 +79,19 @@ function Overview() {
             </div>
           )}
           {selectedTab === "Air" && (
-            <div>
-              <Air />
-            </div>
+            <>
+              {activeAirTab === "Air Import" ? (
+                <div>
+                  <AirImportData />
+                </div>
+              ) : activeAirTab === "Air Export" ? (
+                <div>
+                  <AirExportData />
+                </div>
+              ) : null}
+            </>
           )}
+
           {selectedTab === "Sea" && (
             <div>
               <SeaInfo />

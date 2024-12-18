@@ -21,32 +21,32 @@ const Sidebar = ({ selectedTab, handleTabChange }) => {
         onMouseEnter={() => setIsNavOpen(!isNavOpen)}
         onMouseLeave={() => setIsNavOpen(false)}
       >
-        <ul className="p-4 space-y-4 overflow-y-auto">
+        <ul className="p-4 space-y-4 overflow-y-auto ">
           {/* Navigation Items */}
           <li
-            className={`flex items-center gap-2 p-2 text-lg cursor-pointer rounded-md ${
+            className={`flex  justify-center items-center gap-2 p-2 text-lg cursor-pointer rounded-md ${
               selectedTab === "Dashboard"
                 ? "bg-green-300"
                 : "hover:bg-blue-200"
             } hover:scale-125  `}
             onClick={() => handleTabChange("Dashboard")}
           >
-            <div className="icons text-3xl">
+            <div className="icons text-3xl ">
               <RxDashboard className="text-green-400" />
             </div>
             {isNavOpen && <span>Dashboard</span>}
           </li>
           <li
-            className={`flex items-center gap-2 p-2 text-lg cursor-pointer ${
+            className={`flex  justify-center items-center  gap-2 p-2 text-lg cursor-pointer ${
               selectedTab === "Customer" ? "bg-green-300" : "hover:bg-blue-200"
-            } hover:scale-125 hover:bg-blue-200 rounded-md `}
+            } hover:scale-125 hover:bg-blue-200  rounded-md `}
             onClick={() => handleTabChange("Customer")}
           >
             <AiOutlineUser className="text-2xl text-blue-700" />
             {isNavOpen && <span>Customer</span>}
           </li>
           <li
-            className={`flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md ${
+            className={`flex  justify-center items-center  gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md ${
               selectedTab === "Enquiry" ? "bg-green-300" : "hover:bg-blue-200"
             }`}
             onClick={() => handleTabChange("Enquiry")}
@@ -55,7 +55,7 @@ const Sidebar = ({ selectedTab, handleTabChange }) => {
             {isNavOpen && <span>Enquiry</span>}
           </li>
           <li
-            className={`flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md ${
+            className={`flex  justify-center items-center  gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md ${
               selectedTab === "Air" ? "bg-green-300" : "hover:bg-blue-200"
             }`}
             onClick={() => handleTabChange("Air")}
@@ -63,26 +63,26 @@ const Sidebar = ({ selectedTab, handleTabChange }) => {
             <BsFillBoxSeamFill className="text-2xl" />
             {isNavOpen && <span>Air</span>}
           </li>
-          <li className={`flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md ${
+          <li className={`flex  justify-center items-center  gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md ${
               selectedTab === "Sea" ? "bg-green-300" : "hover:bg-blue-200"
             }`}
             onClick={() => handleTabChange("Sea")}>
             <AiOutlineGlobal className="text-2xl" />
             {isNavOpen && <span>Sea</span>}
           </li>
-          <li className="flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200  hover:scale-125 rounded-md">
+          <li className="flex  justify-center items-center  gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200  hover:scale-125 rounded-md">
             <TbReport className="text-2xl" />
             {isNavOpen && <span>Customer Clearance</span>}
           </li>
-          <li className="flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md">
+          <li className="flex  justify-center items-center  gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md">
             <FaTruckFast className="text-2xl text-blue-500" />
             {isNavOpen && <span>Transporter</span>}
           </li>
-          <li className="flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md">
+          <li className="flex  justify-center items-center  gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md">
             <CiLocationArrow1 className="text-2xl text-violet-700" />
             {isNavOpen && <span>Opus-corner</span>}
           </li>
-          <li className="flex items-center gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md">
+          <li className="flex  justify-center items-center  gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md">
             <VscPieChart className="text-2xl text-red-500" />
             {isNavOpen && <span>Reports</span>}
           </li>
