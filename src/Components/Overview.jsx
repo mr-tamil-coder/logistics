@@ -16,11 +16,16 @@ import Air from "./Air";
 function Overview() {
   const [selectedTab, setSelectedTab] = useState("Dashboard");
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isAirTabActive, setIsAirTabActive] = useState(false);
+  const handleTabChange = (tab) => {
+    setSelectedTab(tab);
+    setIsAirTabActive(tab === "Air");
+  };
   return (
     <div className="flex flex-col h-screen">
       {/* Fixed Header */}
-      <div className="header fixed top-0 left-0 right-0 z-2">
-        <Overviewlogo />
+      <div className="header fixed top-0 left-0 right-0 z-10 ">
+        <Overviewlogo isAirTabActive={isAirTabActive} />
       </div>
 
       {/* Navigation Sidebar */}
@@ -29,7 +34,7 @@ function Overview() {
         onMouseEnter={() => setIsNavOpen(!isNavOpen)}
         onMouseLeave={() => setIsNavOpen(false)}
       >
-        <Sidebar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+        <Sidebar selectedTab={selectedTab} handleTabChange={handleTabChange} />
       </div>
 
       {/* Main Content */}
@@ -43,13 +48,13 @@ function Overview() {
           {selectedTab === "Dashboard" && (
             <div>
               {/* Air Charts */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="flex justify-center items-center flex-wrap ">
                 <AirExportChart />
                 <AirImportChart />
               </div>
 
               {/* Sea Charts */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+              <div className="flex  justify-start items-center flex-wrap ">
                 <SeaExport />
                 <SeaImport />
                 <BarChart />

@@ -1,18 +1,11 @@
-.containers{
-    height: auto;
-    background-color:lightgray;
-    
+.containers {
+  height: auto;
+  background-color: lightgray;
 }
 
-.logostyle{
-    height: 110px;
-
-    
-
-
-    
+.logostyle {
+  height: 110px;
 }
-.con{
-    width: 100%;
+.con {
+  width: 100%;
 }
-

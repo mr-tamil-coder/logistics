@@ -12,6 +12,7 @@ import Air from "./Components/Air";
 import Forget from "./Components/Forget";
 import Airexport from "./Components/Airexport";
 import SeaImport from "./Components/SeaInfo";
+import AirImportChart from "./Components/Charts/AirImportChart";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -28,6 +29,8 @@ function App() {
           <Route path="/enquiry" element={<Enquiry />} />
           {/* <Route path="/air" element={<Air />} /> */}
           <Route path="/sea" element={<SeaImport />} />
+          <Route path="/air" element={<AirImportChart />} />
+
           <Route path="/airexport" element={<Airexport />} />
           <Route path="/forget" element={<Forget/>} />
         </Routes>
