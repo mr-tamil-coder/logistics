@@ -40,3 +40,36 @@
   transition: transform 0.3s ease-in-out;
 
 }
+.container-forget{
+
+  
+  margin-left: 40%;
+  margin-top: 6%;
+  margin-right: 20%;
+ 
+}
+.container{
+  text-align: center;
+  background-color: lightgray;
+  width: 300px;
+  height: 250px;
+  padding: 20px;
+  border-radius:5px ;
+
+}
+.container label{
+  font-family: sans-serif;
+  font-size: 25px;
+  margin-right: 2px;
+
+}
+.container button{
+  margin-top: 20px;
+  font-family: sans-serif;
+  font-size: 25px;
+  color: aliceblue;
+  background-color: black;
+  border-radius: 2px;
+  
+
+}

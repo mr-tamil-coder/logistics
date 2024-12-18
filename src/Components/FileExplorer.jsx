@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { FaSave } from "react-icons/fa";
+import { CiSaveUp2 } from "react-icons/ci";
 
 const FileExplorer = ({handleFile}) => {
   const fileInputRef = useRef(null);
@@ -17,7 +17,7 @@ const FileExplorer = ({handleFile}) => {
   return (
     <div className={`cursor-pointer absolute top-3 right-3`}>
       {/* Save Icon */}
-      <FaSave
+      <CiSaveUp2
         onClick={openFileExplorer}
         className="text-gray-600 hover:text-gray-800"
         size={20}

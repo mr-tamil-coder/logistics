@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "./Logo";
 
 const Forget=()=>{
     const style={
@@ -6,15 +7,21 @@ const Forget=()=>{
     }
 
 return(
-    <><div>
-        <form>
-            <div>
-                <label>E-mail</label>
-                <input type="email"></input>
-            </div>
-            <button ></button>
-        </form>
-    </div>
+    <>
+    <div>
+        <Logo/>
+   <div className="container-forget" >
+  
+  <form className="container">
+      <div><label>Email:</label>
+          <input type="email"></input>
+      </div>
+    
+    <button >Generate OTP</button>
+  </form>
+  
+</div></div>
+    
     </>
 );
 
