@@ -132,14 +132,14 @@ function Customer() {
         <div className="second   px-3">
           <div className="grid grid-cols-2 gap-2  w-full ">
             <div className="mb-6">
-              <h1 className="font-bold mb-4">Customer Requirements</h1>
+              <h1 className="font-bold mb-4 text-lg">Customer Requirements</h1>
               <textarea
                 rows={5}
                 className="w-full  rounded p-2 border border-slate-800 label-input"
               ></textarea>
             </div>
             <div className="mb-6">
-              <h1 className="font-bold mb-4">Feedback:</h1>
+              <h1 className="font-bold mb-4 text-lg">Feedback:</h1>
               <textarea
                 rows={5}
                 cols={2}
@@ -148,10 +148,10 @@ function Customer() {
             </div>
           </div>
           <div>
-            <h1 className="font-bold mb-4">Document Uploads:</h1>
-            <div className="grid grid-cols-2 gap-6">
+            <h1 className="font-bold mb-4 text-lg">Document Uploads:</h1>
+            <div className="grid grid-cols-2 gap-6 ">
               <div>
-                <h1 className="font-bold mb-2">Identification Proofs:</h1>
+                <h1 className="font-bold text-lg mb-2">Identification Proofs:</h1>
                 <label>PAN Copy:</label>
                 <div className="relative mb-4">
                   <input
@@ -205,8 +205,8 @@ function Customer() {
                   />
                 </div>
               </div>
-              <div className="mt-4">
-                <h1 className="font-bold mb-2">Financial Documents:</h1>
+              <div className="">
+                <h1 className="font-bold text-lg mb-2">Financial Documents:</h1>
                 <label>Bank Cheque Copy:</label>
                 <div className="relative mb-4">
                   <input

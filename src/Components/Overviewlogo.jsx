@@ -3,15 +3,54 @@ import "./logo.css";
 import ivw from "./img/logo.png";
 import { MdNotificationsNone } from "react-icons/md";
 import Profile from "./Profile";
-import "./customer.css"
-function Overviewlogo({ isAirTabActive, activeAirTab, setActiveAirTab, isSeaTabActive, activeSeaTab, setActiveSeaTab }) {
-   
+import "./customer.css";
+function Overviewlogo({
+  isDashboardTabActive,
+  isEnquiryTabActive,
+  isCustomerTabActive,
+  isAirTabActive,
+  activeAirTab,
+  setActiveAirTab,
+  isSeaTabActive,
+  activeSeaTab,
+  setActiveSeaTab,
+}) {
   return (
-    <div className={`flex  bg-gray-300 h-28 ${isAirTabActive ? "gap-32" : "justify-between"}`}>
+    <div
+      className={`flex  bg-gray-300 h-28 ${
+        isAirTabActive ? "gap-32" : "justify-between"
+      }`}
+    >
       {/* Logo Section */}
       <div className="px-6 py-4 flex items-center ">
         <img src={ivw} alt="Logo" className="h-12 md:h-16 object-contain" />
       </div>
+
+      {isDashboardTabActive && (
+        <div className="flex items-center w-1/6">
+          <h1 className=" text-center border bg-white border-black text-xl x px-10 w-full py-2  transition duration-300">
+            Dashboard
+          </h1>
+        </div>
+      )}
+
+       {/* Enquiry Tabs Section */}
+       {isCustomerTabActive && (
+        <div className="flex items-center w-1/6">
+          <h1 className=" text-center border bg-white border-black text-xl x px-10 w-full py-2  transition duration-300">
+            Customer
+          </h1>
+        </div>
+      )}
+
+      {/* Enquiry Tabs Section */}
+      {isEnquiryTabActive && (
+        <div className="flex items-center w-1/6">
+          <h1 className=" text-center border bg-white border-black text-xl x px-10 w-full py-2  transition duration-300">
+            Enquiry
+          </h1>
+        </div>
+      )}
 
       {/* Air Tabs Section */}
       {isAirTabActive && (
@@ -69,14 +108,12 @@ function Overviewlogo({ isAirTabActive, activeAirTab, setActiveAirTab, isSeaTabA
         </div>
       )}
       {/* Notifications and Profile */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2">
         <button className="bg-green-400 text-white text-2xl h-12 w-16 flex justify-center items-center rounded-xl hover:bg-gray-600">
           <MdNotificationsNone />
         </button>
         <Profile />
       </div>
-
-     
     </div>
   );
 }

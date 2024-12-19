@@ -43,8 +43,8 @@ const Login = () => {
             </p>
             <div className="role  text-center ">
               <br />
-              <p className="mb-4">
-                <Link to="/signup"> New user? Create account </Link>
+              <p className="mb-4 ">
+                <Link to="/signup"> New user? <span className="text-blue-700 underline">Create account</span> </Link>
               </p>
               <button className="bg-black  text-white py-2 px-4 rounded w-2/5 hover:bg-blue-600">
                 Login

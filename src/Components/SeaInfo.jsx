@@ -20,16 +20,7 @@ const SeaInfo = () => {
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-2">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Co-Leader:
-              </label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-2">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Container Load:
+                Co-Loader:
               </label>
               <input
                 type="text"
@@ -37,9 +28,10 @@ const SeaInfo = () => {
               />
             </div>
             
+            
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Agent Name:
+                Agent Name :
               </label>
               <input
                 type="text"
@@ -169,7 +161,7 @@ const SeaInfo = () => {
 
             {/* Agent and Linear Details */}
             <div className="mb-6">
-              <h1 className="customer-heading text-lg font-bold mb-4">
+              <h1 className="customer-heading text-lg font-bold my-6">
                 Agent and Linear Details
               </h1>
               <div className="field-center grid lg:grid-cols-2 gap-4">

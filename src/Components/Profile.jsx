@@ -23,10 +23,10 @@ function Profile() {
     <div className="relative inline-block">
       {/* Profile Icon */}
       <div
-        className="text-red-700 flex items-center justify-center flex-col px-5 space-x-2 cursor-pointer"
+        className="text-red-700 flex items-center justify-center flex-col px-5  space-x-2 cursor-pointer"
         onClick={toggleDropdown}
       >
-        <AiOutlineUser className="text-3xl" />
+        <AiOutlineUser className="text-4xl mr-5" />
         <div>
           <p className="text-sm font-medium"></p>
         </div>

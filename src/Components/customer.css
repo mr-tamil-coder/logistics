@@ -64,10 +64,14 @@ form {
 
    */
 
+   label{
+    font-size: 18px;
+   }
 .label-input {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
-  background-color: rgb(233, 230, 225);
+  /* background-color: rgb(233, 230, 225); */
+  background-color:rgb(230, 234, 197) ;
 }
 .label-input:hover {
  

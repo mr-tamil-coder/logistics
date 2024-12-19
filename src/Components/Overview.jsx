@@ -21,10 +21,16 @@ function Overview() {
   const [isSeaTabActive, setIsSeaTabActive] = useState(false);
   const [activeAirTab, setActiveAirTab] = useState("Air Import");
   const [activeSeaTab, setActiveSeaTab] = useState("Sea Import");
+  const [isDashboardTabActive, setIsDashboardTabActive] = useState(true);
+  const [isCustomerTabActive, setIsCustomerTabActive] = useState(false);
+  const [isEnquiryTabActive, setIsEnquiryTabActive] = useState(false);
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
     setIsSeaTabActive(tab === "Sea");
     setIsAirTabActive(tab === "Air");
+    setIsDashboardTabActive(tab === "Dashboard");
+    setIsCustomerTabActive(tab === "Customer");
+    setIsEnquiryTabActive(tab === "Enquiry");
   };
   return (
     <div className="flex flex-col h-screen">
@@ -37,6 +43,9 @@ function Overview() {
           isSeaTabActive={isSeaTabActive}
           activeSeaTab={activeSeaTab}
           setActiveSeaTab={setActiveSeaTab}
+          isDashboardTabActive={isDashboardTabActive}
+          isCustomerTabActive={isCustomerTabActive}
+          isEnquiryTabActive={isEnquiryTabActive}
         />
       </div>
       {console.log("d" + activeSeaTab)}
@@ -55,7 +64,7 @@ function Overview() {
         <div
           className={`flex-grow p-4 ml-16 mt-32 ${
             isNavOpen ? "" : ""
-          } overflow-y-auto h-[calc(100vh-1rem)]  `}
+          }  h-[calc(100vh-1rem)]  `}
         >
           {selectedTab === "Dashboard" && (
             <div>
