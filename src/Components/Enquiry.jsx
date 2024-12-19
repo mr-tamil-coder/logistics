@@ -80,15 +80,7 @@ function Enquiry() {
               />
             </div>
 
-            <div className="field-center grid lg:grid-cols-2 gap-4 my-3">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Service Request:
-              </label>
-              <input
-                type="text"
-                className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
-              />
-            </div>
+            
 
             <div className="field-center grid lg:grid-cols-2 gap-4 my-3">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
@@ -176,6 +168,16 @@ function Enquiry() {
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
               />
             </div>
+            <div className="grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+                Currency:
+              </label>
+              <input
+                type="text"
+                className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+              />
+            </div>
+            
           </div>
         </div>
       </form>

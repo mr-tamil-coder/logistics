@@ -13,7 +13,7 @@ import Enquiry from "./Enquiry";
 import SeaInfo from "./SeaInfo";
 import AirImportData from "./AirImportData";
 import AirExportData from "./AirexportData";
-
+import SeaExp from "./SeaExp";
 function Overview() {
   const [selectedTab, setSelectedTab] = useState("Dashboard");
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -106,10 +106,15 @@ function Overview() {
                 </div>
               ) : activeSeaTab === "Sea Export" ? (
                 <div>
-                  <AirExportData />
+                  <SeaExp />
                 </div>
               ) : null}
             </>
+          )}
+          {selectedTab === "Report" && (
+            <div>
+              <Air />
+            </div>
           )}
         </div>
       </div>

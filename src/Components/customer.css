@@ -67,10 +67,10 @@ form {
 .label-input {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
-  background-color: rgb(255, 235, 205);
+  background-color: rgb(233, 230, 225);
 }
 .label-input:hover {
-  background-color: rgb(230, 215, 182);
+ 
   border: 1px solid #161616;
   border-radius: 5px;
   transition: transform 0.5s ease-in-out;

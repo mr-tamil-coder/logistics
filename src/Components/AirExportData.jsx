@@ -21,7 +21,7 @@ function AirExportData() {
 
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Co-Leader:
+                Co-Loader:
               </label>
               <input
                 type="text"
@@ -81,6 +81,13 @@ function AirExportData() {
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">HAWB No:</label>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">HAWB Date:</label>
               <input
                 type="text"
                 className="label-input w-full border px-3 border-slate-800 rounded"
@@ -196,19 +203,20 @@ function AirExportData() {
               />
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">ETA:</label>
-              <input
-                type="date"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">ETD:</label>
               <input
                 type="date"
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">ETA:</label>
+              <input
+                type="date"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
+            </div>
+            
           </div>
 
           {/* Agent and Linear Details */}
@@ -320,6 +328,15 @@ function AirExportData() {
                 <option>Yes</option>
                 <option>No</option>
               </select>
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+                CHA:
+              </label>
+              <input
+                type="text"
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              />
             </div>
           </div>
         </div>

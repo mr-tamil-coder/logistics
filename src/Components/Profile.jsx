@@ -4,6 +4,9 @@ import { AiOutlineUser } from "react-icons/ai";
 function Profile() {
   // State to toggle the dropdown
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  
+
+  
 
   // Function to handle dropdown toggle
   const toggleDropdown = () => {
@@ -12,7 +15,7 @@ function Profile() {
 
   // Function to handle logout (example)
   const handleLogout = () => {
-    console.log("Logged out!");
+    console.log("sign out");
     // Add your logout logic here, e.g., clearing tokens or redirecting
   };
 
@@ -25,16 +28,22 @@ function Profile() {
       >
         <AiOutlineUser className="text-3xl" />
         <div>
-          <p className="text-sm font-medium">Name</p>
+          <p className="text-sm font-medium"></p>
         </div>
       </div>
 
       {/* Dropdown Menu */}
       {isDropdownVisible && (
-        <div className="absolute top-12 right-0 bg-white border rounded shadow-md w-40">
+        <div className="absolute top-12 right-0 bg-white  rounded shadow-md w-40">
           <ul>
-            <li
-              className="hover:bg-gray-100 px-4 py-2 cursor-pointer text-gray-700 text-sm"
+          <li
+              className="hover:bg-blue-300 px-4 py-2 cursor-pointer text-gray-700 text-sm bg-blue-200 border-none"
+              onClick={handleLogout}
+            >
+              Username
+            </li>
+            <li style={{}}
+              className="hover:bg-red-300 px-4 py-2 cursor-pointer text-gray-700 text-sm bg-blue-200 border-none "
               onClick={handleLogout}
             >
               Logout

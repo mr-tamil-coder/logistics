@@ -16,7 +16,7 @@ const FileExplorer = ({handleFile}) => {
 
   return (
     <div className={`cursor-pointer absolute top-3 right-3`}>
-      <CiSaveUp2
+      <CiSaveUp2 
         onClick={openFileExplorer}
         className="text-gray-600 hover:text-gray-800"
         size={20}
