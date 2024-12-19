@@ -16,6 +16,7 @@ import SeaImport from "./Components/SeaInfo";
 import AirImportChart from "./Components/Charts/AirImportChart";
 import SeaExp from "./Components/SeaExp";
 import Report from "./Components/Report";
+import Opuscorner from "./Components/Opuscorner";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -40,6 +41,7 @@ function App() {
           {/* <Route path="/airexport" element={<Airexport />} /> */}
           <Route path="/forget" element={<Forget />} />
           <Route path="/seaexport" element={<SeaExp/>} />
+          <Route path="/opuscorner" element={<Opuscorner/>} />
         </Routes>
       </Router>
     </>
