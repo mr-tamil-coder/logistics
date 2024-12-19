@@ -3,24 +3,23 @@ import "./logo.css";
 import ivw from "./img/logo.png";
 import { MdNotificationsNone } from "react-icons/md";
 import Profile from "./Profile";
-
-function Overviewlogo({ isAirTabActive }) {
-  const [activeAirTab, setActiveAirTab] = useState("Air Import"); // Default tab
-
+import "./customer.css"
+function Overviewlogo({ isAirTabActive, activeAirTab, setActiveAirTab }) {
+   
   return (
-    <div className="flex justify-between bg-gray-300 h-32">
+    <div className={`flex  bg-gray-300 h-28 ${isAirTabActive ? "gap-32" : "justify-between"}`}>
       {/* Logo Section */}
-      <div className="px-6 py-4 flex items-center">
+      <div className="px-6 py-4 flex items-center ">
         <img src={ivw} alt="Logo" className="h-12 md:h-16 object-contain" />
       </div>
 
       {/* Air Tabs Section */}
       {isAirTabActive && (
-        <div className="flex mr-72 gap-4 items-center">
+        <div className="flex  items-center w-4/6 ">
           {/* Air Import Button */}
           <button
             onClick={() => setActiveAirTab("Air Import")}
-            className={`border border-black px-10 py-2 text-lg rounded-md transition duration-300 ${
+            className={`border border-black px-10 w-4/6 py-2 text-lg  transition duration-300 ${
               activeAirTab === "Air Import"
                 ? "bg-green-500 text-white"
                 : "bg-white text-black hover:bg-gray-200"
@@ -32,7 +31,7 @@ function Overviewlogo({ isAirTabActive }) {
           {/* Air Export Button */}
           <button
             onClick={() => setActiveAirTab("Air Export")}
-            className={`border border-black px-10 py-2 text-lg rounded-md transition duration-300 ${
+            className={`border border-black px-10 py-2 w-3/4 text-lg  transition duration-300 ${
               activeAirTab === "Air Export"
                 ? "bg-green-500 text-white"
                 : "bg-white text-black hover:bg-gray-200"

@@ -49,9 +49,9 @@ const AirExportChart = () => {
   };
 
   return (
-    <div className="w-auto max-w-md mx-auto p-4 rounded-lg ">
-      <h2 className="text-lg font-bold mb-4">Air Export</h2>
-      <div className="h-64 flex">
+    <div className="w-2/6 p-4 rounded-lg ">
+      <h2 className="text-lg font-bold text-center">Air Export</h2>
+      <div className="h-64 flex ">
         <ResponsiveContainer width="60%" height="100%">
           <PieChart>
             <Pie
