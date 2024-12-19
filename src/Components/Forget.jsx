@@ -9,14 +9,15 @@ const Forget = () => {
         <div className="container-forget">
           <form className="forget-container">
             <div>
-              <label>Enter your Email:</label>
+              
               <input
                 type="email"
                 className="my-4 p-2 border border-gray-300 rounded w-full"
+                placeholder="Enter your Email:"
               ></input>
             </div>
 
-            <div className=" mt-5 p-2 bg-slate-600">Generate OTP</div>
+            <button className=" mt-5 p-2 px-3 rounded-lg bg-slate-600">Generate OTP</button>
           </form>
         </div>
       </div>

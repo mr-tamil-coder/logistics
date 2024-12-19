@@ -9,8 +9,8 @@ function Logo() {
         <img src={ivw} className="logostyle"></img>
       </div>
 
-      <div className="w-1/2 flex justify-end">
-        <span>Role :</span>{" "}
+      <div className="w-1/2 flex justify-end mx-5">
+        <span className=" text-xl">Role :</span>{" "}
         <select
           id=""
           className="select-role border border-gray-300 rounded w-1/6 mt-2"
