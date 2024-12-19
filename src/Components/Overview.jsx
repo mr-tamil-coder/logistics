@@ -18,9 +18,12 @@ function Overview() {
   const [selectedTab, setSelectedTab] = useState("Dashboard");
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isAirTabActive, setIsAirTabActive] = useState(false);
+  const [isSeaTabActive, setIsSeaTabActive] = useState(false);
   const [activeAirTab, setActiveAirTab] = useState("Air Import");
+  const [activeSeaTab, setActiveSeaTab] = useState("Sea Import");
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
+    setIsSeaTabActive(tab === "Sea");
     setIsAirTabActive(tab === "Air");
   };
   return (
@@ -31,9 +34,12 @@ function Overview() {
           isAirTabActive={isAirTabActive}
           activeAirTab={activeAirTab}
           setActiveAirTab={setActiveAirTab}
+          isSeaTabActive={isSeaTabActive}
+          activeSeaTab={activeSeaTab}
+          setActiveSeaTab={setActiveSeaTab}
         />
       </div>
-      {console.log("d" + activeAirTab)}
+      {console.log("d" + activeSeaTab)}
       {/* Navigation Sidebar */}
       <div
         className="nav fixed top-28 left-0 h-[calc(100%-8rem)] z-10"
@@ -48,15 +54,15 @@ function Overview() {
         {/* Adjust Content for Sidebar */}
         <div
           className={`flex-grow p-4 ml-16 mt-32 ${
-            isNavOpen ? "ml-64" : ""
+            isNavOpen ? "" : ""
           } overflow-y-auto h-[calc(100vh-1rem)]  `}
         >
           {selectedTab === "Dashboard" && (
             <div>
               {/* Air Charts */}
               <div className="flex  ">
-                <AirExportChart />
                 <AirImportChart />
+                <AirExportChart />
               </div>
 
               {/* Sea Charts  */}
@@ -93,9 +99,17 @@ function Overview() {
           )}
 
           {selectedTab === "Sea" && (
-            <div>
-              <SeaInfo />
-            </div>
+            <>
+              {activeSeaTab === "Sea Import" ? (
+                <div>
+                  <SeaInfo />
+                </div>
+              ) : activeSeaTab === "Sea Export" ? (
+                <div>
+                  <AirExportData />
+                </div>
+              ) : null}
+            </>
           )}
         </div>
       </div>
