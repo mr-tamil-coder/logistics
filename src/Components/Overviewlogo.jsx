@@ -4,6 +4,7 @@ import ivw from "./img/logo.png";
 import { MdNotificationsNone } from "react-icons/md";
 import Profile from "./Profile";
 import "./customer.css";
+import "./overview.css";
 function Overviewlogo({
   isDashboardTabActive,
   isEnquiryTabActive,
@@ -22,11 +23,10 @@ function Overviewlogo({
         <img src={ivw} alt="Logo" className="h-12 md:h-16 object-contain" />
       </div>
       <div className="flex items-center p-4">
-  <h1 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 leading-relaxed">
-    Lead King Consolidators
-  </h1>
-</div>
-
+        <h1 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 leading-relaxed animate-fade-in animate-move-left-to-right">
+          Lead King Consolidators
+        </h1>
+      </div>
 
       {/* Notifications and Profile */}
       <div className="flex items-center gap-2">

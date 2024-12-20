@@ -38,3 +38,63 @@ ul li{
     background-color: aquamarine;
   color: blue;
 }
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-move {
+  animation: move 3s infinite ease-in-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-move-left-to-right {
+  animation: moveLeftToRight 5s infinite linear;
+}
+
+.animate-fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
