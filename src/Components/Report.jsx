@@ -1,4 +1,5 @@
 import React from "react";
+import "./Report.css";
 
 const Report=()=>{
 
@@ -6,7 +7,15 @@ const Report=()=>{
     return(
         <>
         
-        <div></div>
+        <div className="container-report">
+         <ul className="report-list">
+            <li>Pre-defined Reports</li>
+        </ul>   
+        <div className="vertical-line" ></div>
+        <ul className="report-list">
+            <li>Custom Reports</li>
+        </ul>  
+        </div>
        
         
         </>
