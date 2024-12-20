@@ -1,0 +1,30 @@
+.container-report {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .report-list {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 20px;
+   
+  }
+  
+  .vertical-line {
+    background-color: black;
+    width: 1px;
+    height: 500px;
+    margin-left: 35%%;
+  }
+
+
+  .report-list li{
+       border: 2px solid black;
+       padding: 6px;
+       font-weight: bold;
+       margin-right: 200px;
+       margin-left: 200px;
+
+  }
+  

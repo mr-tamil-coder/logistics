@@ -13,6 +13,7 @@ import Enquiry from "./Enquiry";
 import SeaInfo from "./SeaInfo";
 import AirImportData from "./AirImportData";
 import AirExportData from "./AirexportData";
+import Report from "./Report";
 import SeaExp from "./SeaExp";
 function Overview() {
   const [selectedTab, setSelectedTab] = useState("Dashboard");
@@ -110,6 +111,11 @@ function Overview() {
                 </div>
               ) : null}
             </>
+          )}
+          {selectedTab === "Report" && (
+            <div>
+              <Report/>
+            </div>
           )}
           {selectedTab === "Opuscorner" && (
             <div>

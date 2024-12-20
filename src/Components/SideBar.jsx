@@ -83,7 +83,8 @@ const Sidebar = ({ selectedTab, handleTabChange }) => {
             {isNavOpen && <span>Opus-corner</span>}
           </li>
          
-          <li className="flex  justify-center items-center  gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md">
+          <li className="flex  justify-center items-center  gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md"
+           onClick={() => handleTabChange("Report")}>
             <VscPieChart className="text-2xl text-red-500" />
             {isNavOpen && <span>Reports</span>}
           </li>

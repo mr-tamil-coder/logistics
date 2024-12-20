@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
 const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(true);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
