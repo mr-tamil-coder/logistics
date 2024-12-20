@@ -16,46 +16,54 @@ function Overviewlogo({
   setActiveSeaTab,
 }) {
   return (
-    <div
-      className={`flex  bg-gray-300 h-28 ${
-        isAirTabActive ? "gap-32" : "justify-between"
-      }`}
-    >
+    <div className="flex  bg-gray-300 h-28 justify-between">
       {/* Logo Section */}
       <div className="px-6 py-4 flex items-center ">
         <img src={ivw} alt="Logo" className="h-12 md:h-16 object-contain" />
       </div>
+      <div className="flex items-center p-4">
+  <h1 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 leading-relaxed">
+    Lead King Consolidators
+  </h1>
+</div>
 
-      {isDashboardTabActive && (
+
+      {/* Notifications and Profile */}
+      <div className="flex items-center gap-2">
+        <button className="bg-green-400 text-white text-2xl h-12 w-16 flex justify-center items-center rounded-xl hover:bg-gray-600">
+          <MdNotificationsNone />
+        </button>
+        <Profile />
+      </div>
+      {/* {isDashboardTabActive && (
         <div className="flex items-center w-1/6">
           <h1 className=" text-center border bg-white border-black text-xl x px-10 w-full py-2  transition duration-300">
             Dashboard
           </h1>
         </div>
-      )}
+      )} */}
 
-       {/* Enquiry Tabs Section */}
-       {isCustomerTabActive && (
+      {/* Enquiry Tabs Section */}
+      {/* {isCustomerTabActive && (
         <div className="flex items-center w-1/6">
           <h1 className=" text-center border bg-white border-black text-xl x px-10 w-full py-2  transition duration-300">
             Customer
           </h1>
         </div>
-      )}
+      )} */}
 
       {/* Enquiry Tabs Section */}
-      {isEnquiryTabActive && (
+      {/* {isEnquiryTabActive && (
         <div className="flex items-center w-1/6">
           <h1 className=" text-center border bg-white border-black text-xl x px-10 w-full py-2  transition duration-300">
             Enquiry
           </h1>
         </div>
-      )}
+      )} */}
 
       {/* Air Tabs Section */}
-      {isAirTabActive && (
+      {/* {isAirTabActive && (
         <div className="flex  items-center w-4/6 ">
-          {/* Air Import Button */}
           <button
             onClick={() => setActiveAirTab("Air Import")}
             className={`border border-black px-10 w-4/6 py-2 text-lg  transition duration-300 ${
@@ -67,7 +75,6 @@ function Overviewlogo({
             Air Import
           </button>
 
-          {/* Air Export Button */}
           <button
             onClick={() => setActiveAirTab("Air Export")}
             className={`border border-black px-10 py-2 w-3/4 text-lg  transition duration-300 ${
@@ -79,10 +86,10 @@ function Overviewlogo({
             Air Export
           </button>
         </div>
-      )}
-      {isSeaTabActive && (
+      )} */}
+      {/* {isSeaTabActive && (
         <div className="flex  items-center w-4/6 ">
-          {/* Sea Import Button */}
+          {/* Sea Import Button 
           <button
             onClick={() => setActiveSeaTab("Sea Import")}
             className={`border border-black px-10 w-4/6 py-2 text-lg  transition duration-300 ${
@@ -94,7 +101,7 @@ function Overviewlogo({
             Sea Import
           </button>
 
-          {/* Sea Export Button */}
+          {/* Sea Export Button 
           <button
             onClick={() => setActiveSeaTab("Sea Export")}
             className={`border border-black px-10 py-2 w-3/4 text-lg  transition duration-300 ${
@@ -106,14 +113,7 @@ function Overviewlogo({
             Sea Export
           </button>
         </div>
-      )}
-      {/* Notifications and Profile */}
-      <div className="flex items-center gap-2">
-        <button className="bg-green-400 text-white text-2xl h-12 w-16 flex justify-center items-center rounded-xl hover:bg-gray-600">
-          <MdNotificationsNone />
-        </button>
-        <Profile />
-      </div>
+      )} */}
     </div>
   );
 }

@@ -68,11 +68,16 @@ function Overview() {
         >
           {selectedTab === "Dashboard" && (
             <div>
+              <div className="text-center text-2xl">
+                <button className="py-3 px-20 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-lg shadow-lg hover:shadow-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 mb-6">
+                  Dashboard
+                </button>
+              </div>
+
               {/* Air Charts */}
               <div className="flex ">
                 <AirImportChart />
                 <AirExportChart />
-                
               </div>
 
               {/* Sea Charts  */}
@@ -86,16 +91,53 @@ function Overview() {
 
           {selectedTab === "Customer" && (
             <div>
+              <div className="text-center text-2xl">
+                <button className="py-3 px-20 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-lg shadow-lg hover:shadow-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 mb-6">
+                  Customer
+                </button>
+              </div>
               <Customer />
             </div>
           )}
           {selectedTab === "Enquiry" && (
             <div>
+            <div className="text-center text-2xl">
+                <button className="py-3 px-20 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-lg shadow-lg hover:shadow-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 mb-6">
+                  Enquiry
+                </button>
+              </div>
               <Enquiry />
             </div>
           )}
           {selectedTab === "Air" && (
-            <>
+            <div className="">
+              {isAirTabActive && (
+                <div className=" w-9/12 flex  mx-48 mb-10 items-center justify-center ">
+                  {/* Air Import Button */}
+                  <button
+                    onClick={() => setActiveAirTab("Air Import")}
+                    className={`border border-black px-10 w-4/6 py-2 text-lg  transition duration-300 ${
+                      activeAirTab === "Air Import"
+                        ? "bg-green-500 text-white"
+                        : "bg-white text-black hover:bg-gray-200"
+                    }`}
+                  >
+                    Air Import
+                  </button>
+
+                  {/* Air Export Button */}
+                  <button
+                    onClick={() => setActiveAirTab("Air Export")}
+                    className={`border border-black px-10 py-2 w-3/4 text-lg  transition duration-300 ${
+                      activeAirTab === "Air Export"
+                        ? "bg-green-500 text-white"
+                        : "bg-white text-black hover:bg-gray-200"
+                    }`}
+                  >
+                    Air Export
+                  </button>
+                </div>
+              )}
               {activeAirTab === "Air Import" ? (
                 <div>
                   <AirImportData />
@@ -105,11 +147,38 @@ function Overview() {
                   <AirExportData />
                 </div>
               ) : null}
-            </>
+            </div>
           )}
 
           {selectedTab === "Sea" && (
             <>
+              {isSeaTabActive && (
+                <div className=" w-8/12 flex  mx-48 mb-10 items-center justify-center ">
+                  {/* Sea Import Button */}
+                  <button
+                    onClick={() => setActiveSeaTab("Sea Import")}
+                    className={`border border-black px-10 w-4/6 py-2 text-lg  transition duration-300 ${
+                      activeSeaTab === "Sea Import"
+                        ? "bg-green-500 text-white"
+                        : "bg-white text-black hover:bg-gray-200"
+                    }`}
+                  >
+                    Sea Import
+                  </button>
+
+                  {/* Sea Export Button */}
+                  <button
+                    onClick={() => setActiveSeaTab("Sea Export")}
+                    className={`border border-black px-10 py-2 w-3/4 text-lg  transition duration-300 ${
+                      activeSeaTab === "Sea Export"
+                        ? "bg-green-500 text-white"
+                        : "bg-white text-black hover:bg-gray-200"
+                    }`}
+                  >
+                    Sea Export
+                  </button>
+                </div>
+              )}
               {activeSeaTab === "Sea Import" ? (
                 <div>
                   <SeaInfo />

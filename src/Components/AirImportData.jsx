@@ -265,74 +265,78 @@ function AirImportData() {
                 type="text"
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
-              <div className="field-center grid lg:grid-cols-2 gap-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Shipper Invoice Date:
-              </label>
-              <input
-                type="date"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
             </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">Amount:</label>
-              <input
-                type="number"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Currency:
-              </label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Consol Manifest:
-              </label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">
-                Airline DO Issued or Not:
-              </label>
-              <select className="label-input w-full border px-3 border-slate-800 rounded">
-                <option>Yes</option>
-                <option>No</option>
-              </select>
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">CHA:</label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">
-                BOE No:
-              </label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
-            <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">
-                BOE Date:
-              </label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
-            </div>
+            <div>
+              <div className="field-center my-3 grid lg:grid-cols-2 gap-4">
+                <label className="label w-full lg:w-3/4 sm:w-1/3">
+                  Shipper Invoice Date:
+                </label>
+                <input
+                  type="date"
+                  className="label-input w-full border px-3 border-slate-800 rounded"
+                />
+              </div>
+              <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+                <label className="label w-full lg:w-3/4 sm:w-1/3">
+                  Amount:
+                </label>
+                <input
+                  type="number"
+                  className="label-input w-full border px-3 border-slate-800 rounded"
+                />
+              </div>
+              <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+                <label className="label w-full lg:w-3/4 sm:w-1/3">
+                  Currency:
+                </label>
+                <input
+                  type="text"
+                  className="label-input w-full border px-3 border-slate-800 rounded"
+                />
+              </div>
+              <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+                <label className="label w-full lg:w-3/4 sm:w-1/3">
+                  Consol Manifest:
+                </label>
+                <input
+                  type="text"
+                  className="label-input w-full border px-3 border-slate-800 rounded"
+                />
+              </div>
+              <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+                <label className="label w-full lg:w-3/4 sm:w-1/3">
+                  Airline DO Issued or Not:
+                </label>
+                <select className="label-input w-full border px-3 border-slate-800 rounded">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div>
+              <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+                <label className="label w-full lg:w-3/4 sm:w-1/3">CHA:</label>
+                <input
+                  type="text"
+                  className="label-input w-full border px-3 border-slate-800 rounded"
+                />
+              </div>
+              <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+                <label className="label w-full lg:w-3/4 sm:w-1/3">
+                  BOE No:
+                </label>
+                <input
+                  type="text"
+                  className="label-input w-full border px-3 border-slate-800 rounded"
+                />
+              </div>
+              <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
+                <label className="label w-full lg:w-3/4 sm:w-1/3">
+                  BOE Date:
+                </label>
+                <input
+                  type="text"
+                  className="label-input w-full border px-3 border-slate-800 rounded"
+                />
+              </div>
             </div>
           </div>
         </div>
