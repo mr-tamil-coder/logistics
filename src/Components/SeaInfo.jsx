@@ -62,11 +62,13 @@ const SeaInfo = () => {
               />
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-2">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">Container Load:</label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
+              <label className="label w-full lg:w-3/4 sm:w-1/3">
+                Container Load:
+              </label>
+              <select className="label-input w-full border px-3 border-slate-800 rounded">
+                <option>FCL</option>
+                <option>LCL</option>
+              </select>
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">HBL No:</label>
@@ -185,7 +187,7 @@ const SeaInfo = () => {
                   Amount:
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   className="label-input w-full border px-3 border-slate-800 rounded"
                 />
               </div>
@@ -241,10 +243,10 @@ const SeaInfo = () => {
               <label className="label w-full lg:w-3/4 sm:w-1/3">
                 LEO Issued or Not:
               </label>
-              <input
-                type="text"
-                className="label-input w-full border px-3 border-slate-800 rounded"
-              />
+              <select className="label-input w-full border px-3 border-slate-800 rounded">
+                <option>Yes</option>
+                <option>No</option>
+              </select>
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">EGM:</label>
@@ -345,14 +347,14 @@ const SeaInfo = () => {
           </div>
 
           <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-            <label className="label w-full lg:w-3/4 sm:w-1/3">ETA:</label>
+            <label className="label w-full lg:w-3/4 sm:w-1/3">ETD:</label>
             <input
               type="text"
               className="label-input w-full border px-3 border-slate-800 rounded"
             />
           </div>
           <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
-            <label className="label w-full lg:w-3/4 sm:w-1/3">ETD:</label>
+            <label className="label w-full lg:w-3/4 sm:w-1/3">ETA:</label>
             <input
               type="text"
               className="label-input w-full border px-3 border-slate-800 rounded"
