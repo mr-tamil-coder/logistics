@@ -68,10 +68,10 @@ const AirImportChart = () => {
   };
 
   return (
-    <div className="w-3/6  p-4 rounded-lg ">
+    <div className="w-3/6  p-4  rounded-lg">
       <h2 className="text-lg font-bold text-center">Air Import </h2>
-      <div className="h-72 relative ">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="h-72 relative  ">
+        <ResponsiveContainer width="86%" height="100%">
           <PieChart>
             <Pie
               data={data}

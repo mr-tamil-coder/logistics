@@ -49,10 +49,10 @@ const AirExportChart = () => {
   };
 
   return (
-    <div className="w-2/6 p-4 rounded-lg ">
+    <div className="w-2/6 pr-4 rounded-lg flex justify-center items-center flex-col  mr-28 ">
       <h2 className="text-lg font-bold text-center">Air Export</h2>
-      <div className="h-64 flex ">
-        <ResponsiveContainer width="60%" height="100%">
+      <div className="h-64 flex justify-center items-center ">
+        <ResponsiveContainer width="86%" height="85%">
           <PieChart>
             <Pie
               data={data}
@@ -78,7 +78,7 @@ const AirExportChart = () => {
         </ResponsiveContainer>
 
         {/* Custom Legend on the right */}
-        <div className="w-40 pl-4 flex flex-col justify-center">
+        <div className="w-40 pl-2 flex flex-col justify-center">
           {data.map((entry, index) => (
             <div key={`legend-${index}`} className="flex items-center mb-2">
               <div

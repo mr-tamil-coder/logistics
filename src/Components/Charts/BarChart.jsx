@@ -28,7 +28,7 @@ const BarChart = () => {
 
   return (
     <> 
-      <div className="w-full max-w-lg mx-auto flex justify-center items-center flex-col h-3/4  " style={{ width: '300px', height: '300px' }}>
+      <div className="w-2/6 flex justify-center items-center flex-col h-3/4  " style={{ width: '300px', height: '300px' }}>
       <span className="text-xl font-bold"> Opus Corner</span>
         <Bar data={data} options={options} className="h-4/5" />
       </div>

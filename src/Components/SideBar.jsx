@@ -78,7 +78,8 @@ const Sidebar = ({ selectedTab, handleTabChange }) => {
             <FaTruckFast className="text-2xl text-blue-500" />
             {isNavOpen && <span>Transporter</span>}
           </li>
-          <li className="flex  justify-center items-center  gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md">
+          <li className="flex  justify-center items-center  gap-2 p-2 text-lg cursor-pointer hover:bg-blue-200 hover:scale-125 rounded-md"
+           onClick={() => handleTabChange("Opuscorner")}>
             <CiLocationArrow1 className="text-2xl text-violet-700" />
             {isNavOpen && <span>Opus-corner</span>}
           </li>

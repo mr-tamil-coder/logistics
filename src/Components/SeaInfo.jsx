@@ -287,7 +287,7 @@ const SeaInfo = () => {
             />
           </div>
           <div className="mb-6">
-            <h1 className="customer-heading text-lg font-bold mb-4">
+            <h1 className="customer-heading text-lg font-bold my-6">
               Port Details
             </h1>
             <div className="field-center grid lg:grid-cols-2 gap-4">

@@ -14,6 +14,7 @@ import SeaInfo from "./SeaInfo";
 import AirImportData from "./AirImportData";
 import AirExportData from "./AirexportData";
 import SeaExp from "./SeaExp";
+import Opuscorner from "./Opuscorner";
 function Overview() {
   const [selectedTab, setSelectedTab] = useState("Dashboard");
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -48,7 +49,6 @@ function Overview() {
           isEnquiryTabActive={isEnquiryTabActive}
         />
       </div>
-      {console.log("d" + activeSeaTab)}
       {/* Navigation Sidebar */}
       <div
         className="nav fixed top-28 left-0 h-[calc(100%-8rem)] z-10"
@@ -69,15 +69,16 @@ function Overview() {
           {selectedTab === "Dashboard" && (
             <div>
               {/* Air Charts */}
-              <div className="flex  ">
+              <div className="flex ">
                 <AirImportChart />
                 <AirExportChart />
+                
               </div>
 
               {/* Sea Charts  */}
-              <div className="flex  justify-start items-center flex-wrap ">
-                <SeaImport />
+              <div className="flex  ">
                 <SeaExport />
+                <SeaImport />
                 <BarChart />
               </div>
             </div>
@@ -122,7 +123,7 @@ function Overview() {
           )}
           {selectedTab === "Opuscorner" && (
             <div>
-              <Opuscorner/>
+              <Opuscorner />
             </div>
           )}
         </div>

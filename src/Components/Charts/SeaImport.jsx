@@ -49,7 +49,7 @@ const SeaImport = () => {
   };
 
   return (
-    <div className="w-2/6 p-4 rounded-lg ">
+    <div className="w-2/6 ml-14 p-4 rounded-lg ">
       <h2 className="text-lg font-bold text-center">Sea Import</h2>
       <div className="h-64 flex ">
         <ResponsiveContainer width="60%" height="100%">
