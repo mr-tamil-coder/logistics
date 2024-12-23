@@ -1,0 +1,39 @@
+.select-container {
+  border: 3px solid black;
+  padding: 3px;
+  width: 450px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.select-box {
+  font-size: 22px;
+  margin: 2px;
+}
+
+.option-box {
+  background-color: rgb(222, 223, 170);
+  width: 50%;
+  size: 10px;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid black;
+}
+
+.container-table th {
+  margin-top: 40px;
+  font-size: 20px;
+  border: 2px solid black;
+  background-color: rgb(248, 213, 123);
+  padding: 13px;
+}
+.container-table td {
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 13px;
+}
+.container-table {
+  margin-top: 20px;
+}
