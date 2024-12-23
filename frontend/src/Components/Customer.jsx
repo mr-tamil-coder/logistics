@@ -261,7 +261,7 @@ function Customer() {
                     handleFile={(name) => handleFileSelect("gst", name)}
                   />
                 </div>
-w              </div>
+              </div>
             </div>
           </div>
           <div className="mt-6 flex justify-end space-x-4">
