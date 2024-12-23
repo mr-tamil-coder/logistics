@@ -338,6 +338,11 @@ function AirExportData() {
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
+            <div className="mt-20 flex justify-center items-center space-x-4">
+              <button className="px-4 py-2 bg-green-500 text-white rounded">
+                Save All
+              </button>
+            </div>
           </div>
         </div>
       </form>

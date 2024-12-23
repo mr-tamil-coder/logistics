@@ -80,8 +80,6 @@ function Enquiry() {
               />
             </div>
 
-            
-
             <div className="field-center grid lg:grid-cols-2 gap-4 my-3">
               <label className="label w-full lg:w-3/4 sm:w-1/3">
                 No of Packages:
@@ -134,8 +132,6 @@ function Enquiry() {
 
         {/* Right Column */}
         <div className="second">
-         
-
           {/* Invoice Details */}
           <div className="mb-6">
             <h1 className="customer-heading text-lg font-bold mb-4">
@@ -177,7 +173,12 @@ function Enquiry() {
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
               />
             </div>
-            
+
+            <div className="mt-20 flex justify-center items-center space-x-4">
+              <button className="px-4 py-2 bg-green-500 text-white rounded">
+                Save All
+              </button>
+            </div>
           </div>
         </div>
       </form>

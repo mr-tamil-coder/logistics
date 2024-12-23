@@ -78,15 +78,15 @@ const AirExportChart = () => {
         </ResponsiveContainer>
 
         {/* Custom Legend on the right */}
-        <div className="w-40 pl-2 flex flex-col justify-center">
+        <div className="w-40 pl-4 flex flex-col justify-center">
           {data.map((entry, index) => (
             <div key={`legend-${index}`} className="flex items-center mb-2">
               <div
                 className="w-4 h-4 mr-2 rounded-full"
                 style={{ backgroundColor: entry.color }}
               />
-              <div>
-                <span className="font-medium">{entry.name}</span>
+              <div className=" whitespace-nowrap">
+                <span className="font-medium ">{entry.name}</span>
                 <span className="text-gray-500 ml-2">({entry.value})</span>
               </div>
             </div>
