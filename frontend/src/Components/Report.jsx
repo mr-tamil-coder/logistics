@@ -4,14 +4,13 @@ import "./Report.css";
 const Report = () => {
   return (
     <>
-      <div className="container-report">
-        <ul className="report-list">
-          <li>Pre-defined Reports</li>
-        </ul>
-        <div className="vertical-line"></div>
-        <ul className="report-list">
-          <li>Custom Reports</li>
-        </ul>
+      <div>
+        <table className="container-report">
+          <tbody>
+            <th>Pre-defined Reports</th>
+            <th className="head-report">Custom Reports</th>
+          </tbody>
+        </table>
       </div>
     </>
   );

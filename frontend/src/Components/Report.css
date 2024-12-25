@@ -1,29 +1,18 @@
 .container-report {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .report-list {
-    text-align: center;
-    list-style-type: none;
-    padding: 0;
-    margin: 0 20px;
-  }
-  
-  .vertical-line {
-    background-color: black;
-    width: 1px;
-    height: 500px;
-    margin-left: 35%%;
-  }
+  font-family: sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: rgb(205, 169, 50);
+  text-align: center;
+  margin-left: 13%;
+  width: 80%;
+}
 
-
-  .report-list li{
-       border: 2px solid black;
-       padding: 6px;
-       font-weight: bold;
-       margin-right: 200px;
-       margin-left: 200px;
-
-  }
-  
+.container-report th {
+  border: 2px solid black;
+  padding: 9px;
+  padding-left: 10px;
+}
+.head-report {
+  width: 50%;
+}

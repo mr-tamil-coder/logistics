@@ -16,6 +16,7 @@ import AirExportData from "./AirexportData";
 import Report from "./Report";
 import SeaExp from "./SeaExp";
 import Opuscorner from "./Opuscorner";
+import { Link } from "react-router-dom";
 function Overview() {
   const [selectedTab, setSelectedTab] = useState("Dashboard");
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -67,28 +68,30 @@ function Overview() {
             isNavOpen ? "" : ""
           }  h-[calc(100vh-1rem)]  `}
         >
-          {selectedTab === "Dashboard" && (
-            <div>
-              <div className="text-center text-2xl">
-                <button className="py-3 px-20 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-lg shadow-lg hover:shadow-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 mb-6">
-                  Dashboard
-                </button>
-              </div>
+          <Link to="/dashboard">
+            {selectedTab === "Dashboard" && (
+              <div>
+                <div className="text-center text-2xl">
+                  <button className="py-3 px-20 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-lg shadow-lg hover:shadow-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 mb-6">
+                    Dashboard
+                  </button>
+                </div>
 
-              {/* Air Charts */}
-              <div className="flex ">
-                <AirImportChart />
-                <AirExportChart />
-              </div>
+                {/* Air Charts */}
+                <div className="flex ">
+                  <AirImportChart />
+                  <AirExportChart />
+                </div>
 
-              {/* Sea Charts  */}
-              <div className="flex  ">
-                <SeaExport />
-                <SeaImport />
-                <BarChart />
+                {/* Sea Charts  */}
+                <div className="flex  ">
+                  <SeaExport />
+                  <SeaImport />
+                  <BarChart />
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </Link>
 
           {selectedTab === "Customer" && (
             <div>
@@ -102,7 +105,7 @@ function Overview() {
           )}
           {selectedTab === "Enquiry" && (
             <div>
-            <div className="text-center text-2xl">
+              <div className="text-center text-2xl">
                 <button className="py-3 px-20 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-lg shadow-lg hover:shadow-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 mb-6">
                   Enquiry
                 </button>
@@ -193,7 +196,7 @@ function Overview() {
           )}
           {selectedTab === "Report" && (
             <div>
-              <Report/>
+              <Report />
             </div>
           )}
           {selectedTab === "Opuscorner" && (

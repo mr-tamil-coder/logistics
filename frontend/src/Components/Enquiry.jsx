@@ -1,9 +1,55 @@
-import React from "react";
-
+import React, { useState } from "react";
+import axios from "axios";
 function Enquiry() {
+  const [formData, setFormData] = useState({
+    customer_code: "",
+    customer_name: "",
+    service_request: "",
+    mode: "",
+    origin_port: "",
+    delivery_port: "",
+    no_of_packages: "",
+    weight: "",
+    dimensions: "",
+    commodity: "",
+    terms_of_shipment: "",
+    invoice_no: "",
+    invoice_value: "",
+    service_request2: "",
+    currency: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/overview/enquiry",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+          },
+        }
+      );
+      console.log(response);
+    } catch (error) {
+      console.log("Enquiry error:", error);
+    }
+  };
   return (
     <div className="ml-12 p-4">
-      <form className="grid grid-cols-1 gap-4 lg:mr-72 md:grid-cols-2">
+      <form
+        className="grid grid-cols-1 gap-4 lg:mr-72 md:grid-cols-2"
+        onSubmit={handleSubmit}
+      >
         {/* Left Column */}
         <div className="first">
           {/* Customer Details */}
@@ -18,6 +64,8 @@ function Enquiry() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="customer_code"
               />
             </div>
             <div className="grid lg:grid-cols-2 gap-4 mt-4">
@@ -27,6 +75,8 @@ function Enquiry() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="customer_name"
               />
             </div>
           </div>
@@ -40,16 +90,24 @@ function Enquiry() {
               <label className="label w-full lg:w-3/4 sm:w-1/3">
                 Service Request:
               </label>
-              <select className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800">
-                <option>Import</option>
-                <option>Export</option>
+              <select
+                className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="service_request"
+              >
+                <option value={"Import"}>Import</option>
+                <option value={"Export"}>Export</option>
               </select>
             </div>
             <div className="grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">Mode:</label>
-              <select className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800">
-                <option>Air</option>
-                <option>Sea</option>
+              <select
+                className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="mode"
+              >
+                <option value={"Air"}>Air</option>
+                <option value={"Sea"}>Sea</option>
               </select>
             </div>
           </div>
@@ -67,6 +125,8 @@ function Enquiry() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="origin_port"
               />
             </div>
 
@@ -77,6 +137,8 @@ function Enquiry() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="delivery_port"
               />
             </div>
 
@@ -87,6 +149,8 @@ function Enquiry() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="no_of_packages"
               />
             </div>
 
@@ -95,6 +159,8 @@ function Enquiry() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="weight"
               />
             </div>
 
@@ -105,6 +171,8 @@ function Enquiry() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="dimensions"
               />
             </div>
 
@@ -115,6 +183,8 @@ function Enquiry() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="commodity"
               />
             </div>
 
@@ -125,6 +195,8 @@ function Enquiry() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="terms_of_shipment"
               />
             </div>
           </div>
@@ -144,6 +216,8 @@ function Enquiry() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="invoice_no"
               />
             </div>
             <div className="grid lg:grid-cols-2 gap-4 mt-4">
@@ -153,6 +227,8 @@ function Enquiry() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="invoice_value"
               />
             </div>
             <div className="grid lg:grid-cols-2 gap-4 mt-4">
@@ -162,6 +238,8 @@ function Enquiry() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="service_request2"
               />
             </div>
             <div className="grid lg:grid-cols-2 gap-4 mt-4">
@@ -171,6 +249,8 @@ function Enquiry() {
               <input
                 type="text"
                 className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
+                onChange={handleChange}
+                name="currency"
               />
             </div>
 

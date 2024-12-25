@@ -1,9 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 function AirExportData() {
+  const [formData, setFormData] = useState({
+    job_no: "",
+    co_loader: "",
+    agent_name: "",
+    shipping_bill_no: "",
+    shipping_bill_date: "",
+    mawb_no: "",
+    mawb_date: "",
+    hawb_no: "",
+    hawb_date: "",
+    no_of_package: "",
+    gweight: "",
+    chweight: "",
+    dimensions: "",
+    commodity: "",
+    terms_of_shipment: "",
+    origin_port: "",
+    destination_port: "",
+    airlines_name: "",
+    flight_no: "",
+    flight_date: "",
+    etd: "",
+    eta: "",
+    agent_debit_note: "",
+    agent_debit_note_date: "",
+    amount: "",
+    currency: "",
+    airline_debit_note: "",
+    airline_debit_note_date: "",
+    shipper_invoice_no: "",
+    amount_invoice: "",
+    currency_invoice: "",
+    consol_manifest: "",
+    airline_do_issued: "No",
+    cha: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('/api/transport/air-export', formData, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+      alert(response.data.message);
+    } catch (error) {
+      console.error('Error saving air export data:', error);
+      alert('Failed to save air export data');
+    }
+  };
+
   return (
     <div className="ml-12 p-4">
-      <form className="grid grid-cols-1 gap-4 lg:gap-20 md:grid-cols-3">
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 lg:gap-20 md:grid-cols-3">
         {/* Left Column */}
         <div className="first">
           {/* Job Details */}
@@ -15,6 +75,9 @@ function AirExportData() {
               <label className="label w-full lg:w-3/4 sm:w-1/3">Job No:</label>
               <input
                 type="text"
+                name="job_no"
+                value={formData.job_no}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -25,6 +88,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="co_loader"
+                value={formData.co_loader}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -35,6 +101,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="agent_name"
+                value={formData.agent_name}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -51,6 +120,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="shipping_bill_no"
+                value={formData.shipping_bill_no}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -60,6 +132,9 @@ function AirExportData() {
               </label>
               <input
                 type="date"
+                name="shipping_bill_date"
+                value={formData.shipping_bill_date}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -67,6 +142,9 @@ function AirExportData() {
               <label className="label w-full lg:w-3/4 sm:w-1/3">MAWB No:</label>
               <input
                 type="text"
+                name="mawb_no"
+                value={formData.mawb_no}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -76,6 +154,9 @@ function AirExportData() {
               </label>
               <input
                 type="date"
+                name="mawb_date"
+                value={formData.mawb_date}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -83,6 +164,9 @@ function AirExportData() {
               <label className="label w-full lg:w-3/4 sm:w-1/3">HAWB No:</label>
               <input
                 type="text"
+                name="hawb_no"
+                value={formData.hawb_no}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -90,6 +174,9 @@ function AirExportData() {
               <label className="label w-full lg:w-3/4 sm:w-1/3">HAWB Date:</label>
               <input
                 type="text"
+                name="hawb_date"
+                value={formData.hawb_date}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -99,6 +186,9 @@ function AirExportData() {
               </label>
               <input
                 type="number"
+                name="no_of_package"
+                value={formData.no_of_package}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -108,6 +198,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="gweight"
+                value={formData.gweight}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -117,6 +210,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="chweight"
+                value={formData.chweight}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -126,6 +222,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="dimensions"
+                value={formData.dimensions}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -135,6 +234,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="commodity"
+                value={formData.commodity}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -154,6 +256,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="terms_of_shipment"
+                value={formData.terms_of_shipment}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -163,6 +268,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="origin_port"
+                value={formData.origin_port}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -172,6 +280,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="destination_port"
+                value={formData.destination_port}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -181,6 +292,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="airlines_name"
+                value={formData.airlines_name}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -190,6 +304,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="flight_no"
+                value={formData.flight_no}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -199,6 +316,9 @@ function AirExportData() {
               </label>
               <input
                 type="date"
+                name="flight_date"
+                value={formData.flight_date}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -206,6 +326,9 @@ function AirExportData() {
               <label className="label w-full lg:w-3/4 sm:w-1/3">ETD:</label>
               <input
                 type="text"
+                name="etd"
+                value={formData.etd}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -213,6 +336,9 @@ function AirExportData() {
               <label className="label w-full lg:w-3/4 sm:w-1/3">ETA:</label>
               <input
                 type="text"
+                name="eta"
+                value={formData.eta}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -230,6 +356,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="agent_debit_note"
+                value={formData.agent_debit_note}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -239,6 +368,9 @@ function AirExportData() {
               </label>
               <input
                 type="date"
+                name="agent_debit_note_date"
+                value={formData.agent_debit_note_date}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -246,6 +378,9 @@ function AirExportData() {
               <label className="label w-full lg:w-3/4 sm:w-1/3">Amount:</label>
               <input
                 type="number"
+                name="amount"
+                value={formData.amount}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -255,6 +390,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="currency"
+                value={formData.currency}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -264,6 +402,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="airline_debit_note"
+                value={formData.airline_debit_note}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -273,6 +414,9 @@ function AirExportData() {
               </label>
               <input
                 type="date"
+                name="airline_debit_note_date"
+                value={formData.airline_debit_note_date}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -292,6 +436,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="shipper_invoice_no"
+                value={formData.shipper_invoice_no}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -299,6 +446,9 @@ function AirExportData() {
               <label className="label w-full lg:w-3/4 sm:w-1/3">Amount:</label>
               <input
                 type="number"
+                name="amount_invoice"
+                value={formData.amount_invoice}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -308,6 +458,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="currency_invoice"
+                value={formData.currency_invoice}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -317,6 +470,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="consol_manifest"
+                value={formData.consol_manifest}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
@@ -324,7 +480,12 @@ function AirExportData() {
               <label className="label w-full lg:w-3/4 sm:w-1/3">
                 Airline DO Issued or Not:
               </label>
-              <select className="label-input w-full border px-3 border-slate-800 rounded">
+              <select
+                name="airline_do_issued"
+                value={formData.airline_do_issued}
+                onChange={handleChange}
+                className="label-input w-full border px-3 border-slate-800 rounded"
+              >
                 <option>Yes</option>
                 <option>No</option>
               </select>
@@ -335,6 +496,9 @@ function AirExportData() {
               </label>
               <input
                 type="text"
+                name="cha"
+                value={formData.cha}
+                onChange={handleChange}
                 className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
