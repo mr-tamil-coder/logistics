@@ -5,16 +5,28 @@ import Logo from "./Logo";
 import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 const Login = () => {
   const [showPassword, setShowPassword] = useState(true);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
+
+
+  const handleSuccess = (response) => { console.log('Login Successful!', response);
+    
+       console.log('Access Token:', response.credential);  
+    
+   }; 
+     const handleError = () => { console.error('Login Failed'); };
+
+     const clientid="139241175378-bja01i0fg7dpv9q77rk0qod54cu7ikhc.apps.googleusercontent.com";
+     
   return (
     <>
       <Logo />
-
+      
       <div className=" flex items-center justify-center w-full ">
         <div className="mt-12 w-10/12 md:w-1/2 lg:w-1/4  rounded-lg shadow-lg bg-white">
           <form action="" className="bg-gray-300 p-6 rounded-lg login-height">
@@ -49,6 +61,10 @@ const Login = () => {
               <button className="bg-black  text-white py-2 px-4 rounded w-2/5 hover:bg-blue-600">
                 Login
               </button>
+              <GoogleOAuthProvider className="bg-black  text-white py-2 px-4 rounded w-2/5 hover:bg-blue-600"
+               clientId={clientid}>
+               <GoogleLogin onSuccess={handleSuccess} Failure={handleError}  />
+               </GoogleOAuthProvider>
             </div>
           </form>
         </div>
