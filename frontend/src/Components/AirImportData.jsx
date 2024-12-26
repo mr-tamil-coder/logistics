@@ -49,11 +49,15 @@ function AirImportData() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/transport/air-import", formData, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const response = await axios.post(
+        "http://localhost:5000/air-import",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+          },
+        }
+      );
       alert(response.data.message);
     } catch (error) {
       console.error("Error saving air import data:", error);
@@ -293,7 +297,7 @@ function AirImportData() {
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">ETD:</label>
               <input
-                type="text"
+                type="date"
                 name="etd"
                 value={formData.etd}
                 onChange={handleChange}
@@ -303,7 +307,7 @@ function AirImportData() {
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">ETA:</label>
               <input
-                type="text"
+                type="date"
                 name="eta"
                 value={formData.eta}
                 onChange={handleChange}
@@ -493,7 +497,7 @@ function AirImportData() {
                 BOE Date:
               </label>
               <input
-                type="text"
+                type="date"
                 name="boe_date"
                 value={formData.boe_date}
                 onChange={handleChange}

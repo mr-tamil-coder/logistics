@@ -49,9 +49,9 @@ function AirExportData() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/transport/air-export', formData, {
+      const response = await axios.post('http://localhost:5000/air-export', formData, {
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
+          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
         }
       });
       alert(response.data.message);
@@ -173,7 +173,7 @@ function AirExportData() {
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
               <label className="label w-full lg:w-3/4 sm:w-1/3">HAWB Date:</label>
               <input
-                type="text"
+                type="date"
                 name="hawb_date"
                 value={formData.hawb_date}
                 onChange={handleChange}

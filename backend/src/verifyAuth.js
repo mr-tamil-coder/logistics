@@ -3,7 +3,7 @@ const { verifyToken } = require("./encrypt");
 function authenticateToken(req, res, next) {
   const token =
     req.headers["authorization"]?.split(" ")[1] || req.cookies.authToken;
-  console.log(token);
+  console.log("Token "+token);
 
   if (!token) {
     return res.status(403).send("Access denied. No token provided.");
@@ -12,7 +12,7 @@ function authenticateToken(req, res, next) {
   try {
     const decoded = verifyToken(token);
     req.user = decoded;
-    console.log(decoded);
+    console.log("Decoded data"+decoded);
     console.log("User verified");
 
     next();

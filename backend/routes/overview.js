@@ -2,6 +2,22 @@ const express = require("express");
 const router = express.Router();
 const authenticateToken = require("../src/verifyAuth");
 const db = require("../src/db");
+
+router.get("/verify-auth", authenticateToken, (req, res) => {
+  try {
+    // If authenticateToken middleware passes, user is authenticated
+    res.status(200).json({ 
+      isAuthenticated: true,
+      user: req.user // includes email and other user info
+    });
+  } catch (err) {
+    res.status(401).json({ 
+      isAuthenticated: false,
+      message: "Invalid or expired token" 
+    });
+  }
+});
+
 router.post("/", authenticateToken, (req, res) => {
   try {
     res.status(200).send("overview");

@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./login.css";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
@@ -19,56 +18,34 @@ const Login = ({ setAuthenticated, setApiAvailable }) => {
   const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setLoginData((prevData) => ({ ...prevData, [name]: value }));
+    setLoginData((prevData) => ({ ...prevData, [name]: value })); 
   };
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
 
-  async function overviewApiCall(response) {
-    const token = localStorage.getItem("authToken");
-    console.log("Entered api call");
-
-    const apiResponse = await axios.post(
-      "http://localhost:5000/overview",
-      {},
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    console.log("overview", apiResponse);
-
-    if (apiResponse.status === 200) {
-      setApiAvailable(true);
-      setAuthenticated(true);
-      navigate(response.data.redirect);
-    } else {
-      console.log("error");
-    }
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:5000/login",
-        loginData
-      );
+      const response = await axios.post("http://localhost:5000/login", loginData);
       console.log(response);
-
+      
       if (response.status === 200) {
-        const token = response.data.token;
+        Alert("success", "Login successful!");
+        setTimeout(() => {
+          const token = response.data.token;
         localStorage.setItem("authToken", token);
-
-        Alert("success", "Login successful");
-        overviewApiCall(response);
+        setAuthenticated(true);
+        navigate("/overview");
+        }, 2000);
       }
     } catch (err) {
-      alert("login failed");
+      Alert("error", "Login failed. Please try again.");
+
+      setAuthenticated(false);
     }
   };
+
   return (
     <>
       <Logo />

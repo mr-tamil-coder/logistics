@@ -68,7 +68,6 @@ function Overview() {
             isNavOpen ? "" : ""
           }  h-[calc(100vh-1rem)]  `}
         >
-          <Link to="/dashboard">
             {selectedTab === "Dashboard" && (
               <div>
                 <div className="text-center text-2xl">
@@ -91,7 +90,6 @@ function Overview() {
                 </div>
               </div>
             )}
-          </Link>
 
           {selectedTab === "Customer" && (
             <div>

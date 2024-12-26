@@ -3,7 +3,7 @@ import React from "react";
 import Signup from "./Components/Signup";
 import "./App.css";
 import Login from "./Components/Login";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Overview from "./Components/Overview";
 import Sidebar from "./Components/SideBar";
 import Customer from "./Components/Customer";
@@ -16,44 +16,79 @@ import Opuscorner from "./Components/Opuscorner";
 import axios from "axios";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [isAuthenticated, setAuthenticated] = useState(false);
-  const [isApiAvailable, setApiAvailable] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const verifyAuth = async () => {
+      try {
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+          setIsAuthenticated(false);
+          setIsLoading(false);
+          return;
+        }
+
+        const response = await axios.get('http://localhost:5000/overview/verify-auth', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+
+        setIsAuthenticated(response.status === 200);
+      } catch (error) {
+        setIsAuthenticated(false);
+        localStorage.removeItem('authToken');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    verifyAuth();
+  }, []);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Router>
       <Routes>
         {/* Public Routes */}
-        <Route path="/" element={<Login />} />
-        <Route
-          path="/login"
-          element={
-            <Login
-              setAuthenticated={setAuthenticated}
-              setApiAvailable={setApiAvailable}
-            />
-          }
-        />
+        <Route path="/" element={<Login setAuthenticated={setIsAuthenticated} />} />
+        <Route path="/login" element={<Login setAuthenticated={setIsAuthenticated} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forget" element={<Forget />} />
 
-        {/* Conditional API-Dependent Routes */}
-        {!isAuthenticated && !isApiAvailable ? (
-          <Route
-            path="*"
-            element={<h1>Login to access this page.</h1>}
-          />
-        ) : (
-          <>
-            <Route path="/overview" element={<Overview />} />
-            <Route path="/sidebar" element={<Sidebar />} />
-            <Route path="/customer" element={<Customer />} />
-            <Route path="/enquiry" element={<Enquiry />} />
-            <Route path="/sea" element={<SeaImport />} />
-            <Route path="/seaexport" element={<SeaExp />} />
-            <Route path="/reports" element={<Report />} />
-            <Route path="/opuscorner" element={<Opuscorner />} />
-          </>
-        )}
+        {/* Protected Routes */}
+        <Route
+          path="/overview"
+          element={isAuthenticated ? <Overview /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/customer"
+          element={isAuthenticated ? <Customer /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/enquiry"
+          element={isAuthenticated ? <Enquiry /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/sea"
+          element={isAuthenticated ? <SeaImport /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/seaexport"
+          element={isAuthenticated ? <SeaExp /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/reports"
+          element={isAuthenticated ? <Report /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/opuscorner"
+          element={isAuthenticated ? <Opuscorner /> : <Navigate to="/login" />}
+        />
       </Routes>
     </Router>
   );

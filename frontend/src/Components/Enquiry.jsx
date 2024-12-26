@@ -39,7 +39,7 @@ function Enquiry() {
           },
         }
       );
-      console.log(response);
+      console.log("Enquiry response:", response);
     } catch (error) {
       console.log("Enquiry error:", error);
     }
