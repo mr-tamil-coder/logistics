@@ -14,6 +14,7 @@ import SeaExp from "./Components/SeaExp";
 import Report from "./Components/Report";
 import Opuscorner from "./Components/Opuscorner";
 import axios from "axios";
+import UploadDoc from "./Components/UploadDoc";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -59,7 +60,7 @@ function App() {
         <Route path="/login" element={<Login setAuthenticated={setIsAuthenticated} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forget" element={<Forget />} />
-
+        <Route path="/a" element={<UploadDoc />} />
         {/* Protected Routes */}
         <Route
           path="/overview"

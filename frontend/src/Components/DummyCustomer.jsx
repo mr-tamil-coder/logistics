@@ -151,9 +151,7 @@ function Customer() {
             <h1 className="font-bold mb-4 text-lg">Document Uploads:</h1>
             <div className="grid grid-cols-2 gap-6 ">
               <div>
-                <h1 className="font-bold text-lg mb-2">
-                  Identification Proofs:
-                </h1>
+                <h1 className="font-bold text-lg mb-2">Identification Proofs:</h1>
                 <label>PAN Copy:</label>
                 <div className="relative mb-4">
                   <input

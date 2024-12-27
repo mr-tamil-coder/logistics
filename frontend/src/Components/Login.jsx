@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Alert from "./Alert";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 const Login = ({ setAuthenticated, setApiAvailable }) => {
   const [showPassword, setShowPassword] = useState(true);
   const [loginData, setLoginData] = useState({
@@ -18,7 +19,7 @@ const Login = ({ setAuthenticated, setApiAvailable }) => {
   const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setLoginData((prevData) => ({ ...prevData, [name]: value })); 
+    setLoginData((prevData) => ({ ...prevData, [name]: value }));
   };
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
@@ -27,24 +28,46 @@ const Login = ({ setAuthenticated, setApiAvailable }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/login", loginData);
+      const response = await axios.post(
+        "http://localhost:5000/login",
+        loginData
+      );
       console.log(response);
-      
+
       if (response.status === 200) {
         Alert("success", "Login successful!");
         setTimeout(() => {
           const token = response.data.token;
-        localStorage.setItem("authToken", token);
-        setAuthenticated(true);
-        navigate("/overview");
+          localStorage.setItem("authToken", token);
+          setAuthenticated(true);
+          navigate("/overview");
         }, 2000);
+      } else {
+        console.log("err");
       }
     } catch (err) {
-      Alert("error", "Login failed. Please try again.");
+      if (err.status == 401) {
+        Alert("error", "Password Incorrect. Please try again.");
+      }
+      if (err.status == 404) {
+        Alert("error", "Email Incorrect.");
+      }
 
       setAuthenticated(false);
     }
   };
+
+  const handleSuccess = (response) => {
+    console.log("Login Successful!", response);
+
+    console.log("Access Token:", response.credential);
+  };
+  const handleError = () => {
+    console.error("Login Failed");
+  };
+
+  const clientid =
+    "139241175378-bja01i0fg7dpv9q77rk0qod54cu7ikhc.apps.googleusercontent.com";
 
   return (
     <>
@@ -100,6 +123,12 @@ const Login = ({ setAuthenticated, setApiAvailable }) => {
               <button className="bg-black  text-white py-2 px-4 rounded w-2/5 hover:bg-blue-600">
                 Login
               </button>
+              <GoogleOAuthProvider
+                className="bg-black  text-white py-2 px-4 rounded w-2/5 hover:bg-blue-600"
+                clientId={clientid}
+              >
+                <GoogleLogin onSuccess={handleSuccess} onError={handleError} />
+              </GoogleOAuthProvider>
             </div>
           </form>
           <ToastContainer />

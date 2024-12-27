@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const app = express();
 require("dotenv").config();
 const cookie = require("cookie-parser");
+const path = require("path");
 const cors = require("cors");
 const corsOptions = {
   origin: "http://localhost:5173",
@@ -11,6 +12,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(cookie());
 app.use(bodyParser.json());
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 const authRouter = require("./routes/authRoutes");
 const overview = require("./routes/overview");
 const transport = require("./routes/transport");

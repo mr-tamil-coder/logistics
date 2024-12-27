@@ -10,16 +10,18 @@ function Signup() {
     username: "",
     password: "",
     email: "",
+    role: "",
   });
 
+  const role = localStorage.getItem("userRole");
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSignupData((prevData) => ({
       ...prevData,
       [name]: value,
+      role:role
     }));
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
