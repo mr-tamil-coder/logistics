@@ -2,7 +2,7 @@ const db = require("../src/db");
 const path = require("path");
 const multer = require("multer");
 const express = require("express");
-const fs = require('fs');
+const fs = require("fs");
 const { hashPassword, comparePassword } = require("../src/encrypt");
 const router = express.Router();
 const { generateToken } = require("../src/encrypt");
@@ -83,10 +83,8 @@ router.post("/login", async (req, res) => {
   });
 });
 
-
-
 // Ensure uploads directory exists
-const uploadDir = 'uploads';
+const uploadDir = "uploads";
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir);
 }
@@ -98,18 +96,26 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, cb) => {
     // Create safe filename
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
-    cb(null, `${uniqueSuffix}-${file.originalname.replace(/[^a-zA-Z0-9.]/g, '_')}`);
-  }
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(
+      null,
+      `${uniqueSuffix}-${file.originalname.replace(/[^a-zA-Z0-9.]/g, "_")}`
+    );
+  },
 });
 
 // File filter
 const fileFilter = (req, file, cb) => {
-  const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'application/msword'];
+  const allowedTypes = [
+    "application/pdf",
+    "image/jpeg",
+    "image/png",
+    "application/msword",
+  ];
   if (allowedTypes.includes(file.mimetype)) {
     cb(null, true);
   } else {
-    cb(new Error('Invalid file type'), false);
+    cb(new Error("Invalid file type"), false);
   }
 };
 
@@ -117,8 +123,8 @@ const upload = multer({
   storage: storage,
   fileFilter: fileFilter,
   limits: {
-    fileSize: 5 * 1024 * 1024 // 5MB limit
-  }
+    fileSize: 5 * 1024 * 1024, // 5MB limit
+  },
 });
 
 // Upload endpoint
@@ -136,7 +142,9 @@ router.post("/upload", upload.single("document"), async (req, res) => {
     if (!customerId || !fileType) {
       // Delete uploaded file if validation fails
       fs.unlinkSync(filePath);
-      return res.status(400).json({ error: "Customer ID and file type are required" });
+      return res
+        .status(400)
+        .json({ error: "Customer ID and file type are required" });
     }
 
     // Insert file record into database
@@ -153,13 +161,15 @@ router.post("/upload", upload.single("document"), async (req, res) => {
           // Delete uploaded file if database insert fails
           fs.unlinkSync(filePath);
           console.error("Database error:", err);
-          return res.status(500).json({ error: "Failed to save file information" });
+          return res
+            .status(500)
+            .json({ error: "Failed to save file information" });
         }
 
         res.status(200).json({
           message: "File uploaded successfully",
           fileId: result.insertId,
-          filePath: filePath
+          filePath: filePath,
         });
       }
     );
@@ -171,6 +181,26 @@ router.post("/upload", upload.single("document"), async (req, res) => {
     }
     res.status(500).json({ error: "File upload failed" });
   }
+});
+
+// Get all documents for a customer
+router.get("/:customerId", (req, res) => {
+  const { customerId } = req.params;
+
+  const query = `
+    SELECT id, customer_id, file_type, file_path, original_name, upload_date
+    FROM files
+    WHERE customer_id = ?
+    ORDER BY upload_date DESC
+  `;
+
+  db.query(query, [customerId], (err, results) => {
+    if (err) {
+      console.error("Database error:", err);
+      return res.status(500).json({ error: "Failed to fetch documents" });
+    }
+    res.json({ documents: results });
+  });
 });
 
 module.exports = router;

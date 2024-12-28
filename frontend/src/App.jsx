@@ -15,7 +15,8 @@ import Report from "./Components/Report";
 import Opuscorner from "./Components/Opuscorner";
 import axios from "axios";
 import UploadDoc from "./Components/UploadDoc";
-
+import CustomerDocuments from "./Components/CustomerDocuments";
+import ForgetPwd from "./Components/ForgetPwd";
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -60,7 +61,9 @@ function App() {
         <Route path="/login" element={<Login setAuthenticated={setIsAuthenticated} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forget" element={<Forget />} />
-        <Route path="/a" element={<UploadDoc />} />
+        {/* <Route path="/a" element={<UploadDoc />} /> file upload */}
+        {/* <Route path="/b" element={<CustomerDocuments />} file retrieve */}
+        <Route path="/for" element={<ForgetPwd />} />
         {/* Protected Routes */}
         <Route
           path="/overview"
