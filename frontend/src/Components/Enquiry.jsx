@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import axios from "axios";
 import { motion } from "framer-motion";
+
 function Enquiry() {
   const [formData, setFormData] = useState({
     customer_code: "",
@@ -54,7 +55,7 @@ function Enquiry() {
         }
       );
 
-      if (!response.ok) {
+      if (response.status !== 200) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
@@ -68,27 +69,6 @@ function Enquiry() {
       setIsSubmitting(false);
       setTimeout(() => setSubmitStatus(null), 3000);
     }
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.3 },
-    },
   };
 
   const renderInput = (label, name, type = "text", options = null) => (
@@ -194,16 +174,9 @@ function Enquiry() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`
-                  w-full max-w-md px-6 py-3 rounded-lg text-white font-semibold
-                  ${
-                    isSubmitting
-                      ? "bg-gray-400"
-                      : "bg-blue-600 hover:bg-blue-700"
-                  }
-                  transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg
-                  flex items-center justify-center space-x-2
-                `}
+                className={`w-full max-w-md px-6 py-3 rounded-lg text-white font-semibold ${
+                  isSubmitting ? "bg-gray-400" : "bg-blue-600 hover:bg-blue-700"
+                } transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg flex items-center justify-center space-x-2`}
               >
                 {isSubmitting ? (
                   <span className="inline-block animate-pulse">

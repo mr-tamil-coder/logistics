@@ -17,6 +17,7 @@ import axios from "axios";
 import UploadDoc from "./Components/UploadDoc";
 import CustomerDocuments from "./Components/CustomerDocuments";
 import ForgetPwd from "./Components/ForgetPwd";
+
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);

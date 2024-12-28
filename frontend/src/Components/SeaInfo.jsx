@@ -123,13 +123,20 @@ const SeaInfo = () => {
               Shipping Details
             </h1>
             <div className="field-center grid lg:grid-cols-2 gap-4">
-              <label className="label w-full lg:w-3/4 sm:w-1/3">MBL NO:</label>
+              <label className="label w-full lg:w-3/4 sm:w-1/3">MBL No:</label>
               <input
                 type="text"
                 className="label-input w-full border px-3 border-slate-800 rounded"
                 name="mbl_no"
                 value={formData.mbl_no}
                 onChange={handleChange}
+              />
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-2">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">MBL Date:</label>
+              <input
+                type="date"
+                className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
@@ -161,6 +168,13 @@ const SeaInfo = () => {
                 name="hbl_no"
                 value={formData.hbl_no}
                 onChange={handleChange}
+              />
+            </div>
+            <div className="field-center grid lg:grid-cols-2 gap-4 mt-2">
+              <label className="label w-full lg:w-3/4 sm:w-1/3">HBL Date:</label>
+              <input
+                type="date"
+                className="label-input w-full border px-3 border-slate-800 rounded"
               />
             </div>
             <div className="field-center grid lg:grid-cols-2 gap-4 mt-4">
