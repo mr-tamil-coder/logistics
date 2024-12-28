@@ -168,10 +168,11 @@ function Enquiry() {
               <label className="label w-full lg:w-3/4 sm:w-1/3">
                 Currency:
               </label>
-              <input
-                type="text"
-                className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800"
-              />
+              <select className="label-input w-full md:w-2/4 lg:w-3/4 border px-3 border-slate-800">
+                <option>USD</option>
+                <option>Euros</option>
+              </select>
+              
             </div>
 
             <div className="mt-20 flex justify-center items-center space-x-4">

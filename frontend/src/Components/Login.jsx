@@ -5,23 +5,38 @@ import Logo from "./Logo";
 import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
-import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
+
+import axios from 'axios';
 const Login = () => {
+  const clientid="139241175378-bja01i0fg7dpv9q77rk0qod54cu7ikhc.apps.googleusercontent.com";
   const [showPassword, setShowPassword] = useState(true);
+  const [userInfo, setUserInfo] = useState(null);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
+   const handleError = 
+   () => { console.error('Login Failed');}
 
+   const handleLoginSuccess = async (response) => {
+    const { credential } = response;
 
-  const handleSuccess = (response) => { console.log('Login Successful!', response);
-    
-       console.log('Access Token:', response.credential);  
-    
-   }; 
-     const handleError = () => { console.error('Login Failed'); };
+    try {
+      const res = await axios.post('http://localhost:5000/api/auth/google-login', { credential });
+      setUserInfo(res.data.user);
+      console.log(res.data.message); // 'User signed up' or 'User logged in'
+ 
+    } catch (error) {
+      console.error('Login failed:', error);
+    }
+  };
 
-     const clientid="139241175378-bja01i0fg7dpv9q77rk0qod54cu7ikhc.apps.googleusercontent.com";
+      
+  
+  
+
+     
      
   return (
     <>
@@ -63,14 +78,21 @@ const Login = () => {
               </button>
               <GoogleOAuthProvider className="bg-black  text-white py-2 px-4 rounded w-2/5 hover:bg-blue-600"
                clientId={clientid}>
-               <GoogleLogin onSuccess={handleSuccess} Failure={handleError}  />
+               <GoogleLogin onSuccess={handleLoginSuccess } Failure={handleError}  />
                </GoogleOAuthProvider>
+              
+
+
+               
+            
             </div>
           </form>
         </div>
       </div>
     </>
   );
-};
+
+}
+
 
 export default Login;

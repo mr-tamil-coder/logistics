@@ -2,7 +2,10 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "google-auth-library": "^9.15.0",
     "mysql": "^2.18.1",
-    "mysql2": "^3.11.5"
+    "mysql2": "^3.11.5",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0"
   }
 }

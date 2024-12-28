@@ -2,12 +2,32 @@ import React, { useState } from "react";
 import "./login.css";
 import Logo from "./Logo.jsx";
 import axios from "axios";
+import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 function Signup() {
   const [signUpData, setSignUpData] = useState({
     username: "",
     password: "",
     email: "",
   });
+  const clientid="139241175378-bja01i0fg7dpv9q77rk0qod54cu7ikhc.apps.googleusercontent.com";
+  const [userInfo, setUserInfo] = useState(null);
+  
+  const handleError =() => { 
+    console.error('Login Failed');
+  }
+
+   const handleLoginSuccess = async (response) => {
+    const { credential } = response;
+
+    try {
+      const res = await axios.post('http://localhost:5000/api/auth/google-login', { credential });
+      setUserInfo(res.data.user);
+      console.log(res.data.message); // 'User signed up' or 'User logged in'
+ 
+    } catch (error) {
+      console.error('Login failed:', error);
+    }
+  };
   const handleChange = (e) => {
     console.log(e);
     const { name, value } = e.target;
@@ -74,6 +94,10 @@ function Signup() {
               >
                 Sign up
               </button>
+              <GoogleOAuthProvider className="bg-black  text-white py-2 px-4 rounded w-2/5 hover:bg-blue-600"
+               clientId={clientid}>
+               <GoogleLogin onSuccess={handleLoginSuccess } Failure={handleError}  />
+               </GoogleOAuthProvider>
             </div>
           </form>
         </div>

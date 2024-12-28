@@ -6,6 +6,9 @@ import Profile from "./Profile";
 import "./customer.css";
 import "./overview.css";
 import { Title } from "chart.js";
+
+
+
 function Overviewlogo({
   isDashboardTabActive,
   isEnquiryTabActive,
@@ -17,6 +20,11 @@ function Overviewlogo({
   activeSeaTab,
   setActiveSeaTab,
 }) {
+
+  
+  
+  
+  
   return (
     <div className="flex  bg-gray-300 h-28 justify-between">
       {/* Logo Section */}
@@ -36,9 +44,14 @@ function Overviewlogo({
       <div className="flex items-center gap-2">
         <button className="bg-green-400 text-white text-2xl h-12 w-16 flex justify-center items-center rounded-xl hover:bg-gray-600">
           <MdNotificationsNone />
+          
         </button>
+        
         <Profile />
+        
       </div>
+      
+      
     </div>
   );
 }
