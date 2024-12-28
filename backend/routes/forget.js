@@ -5,6 +5,8 @@ const bcrypt = require("bcrypt");
 const db = require("../src/db"); // Your database connection file
 const router = express.Router();
 
+
+
 // Generate OTP and send email
 router.post("/generate-otp", async (req, res) => {
   const { email } = req.body;
