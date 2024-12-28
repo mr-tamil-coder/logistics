@@ -22,6 +22,8 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+
+  
   useEffect(() => {
     const verifyAuth = async () => {
       try {
